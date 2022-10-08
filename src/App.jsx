@@ -1,34 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { ThemeProvider } from "styled-components";
+import { GlobalCSS } from "./styles/styles.js";
+import { initialThemeState, themeReducer } from "./reducers/theme.reducer.js";
+import { useMemo, useReducer } from "react";
+import { UpperPane } from "./layout-components/upper-pane/upper-pane.component";
+import { ModalOverlay } from "./layout-components/modal-overlay/modal-overlay.component.jsx";
+import { MobileNavProvider } from "./contexts/mobile-nav-context.js";
+import {
+  initialMobileNavState,
+  mobileNavReducer,
+} from "./reducers/mobile-nav-reducer.js";
+import { DesktopSideTab } from "./layout-components/desktop-side-tab/desktop-side-tab.component.jsx";
+import { Wrapper } from "./layout-components/wrapper/wrapper.component.jsx";
+import { Footer } from "./layout-components/footer/footer.component.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [themeState, themeDispatch] = useReducer(
+    themeReducer,
+    initialThemeState,
+    (state) => state
+  );
+  const [mobileNavState, mobileNavDispatch] = useReducer(
+    mobileNavReducer,
+    initialMobileNavState,
+    (state) => state
+  );
 
+  const mobileNavValue = useMemo(
+    () => ({
+      mobileNavState,
+      mobileNavDispatch,
+    }),
+    [mobileNavState]
+  );
+  const themeValue = useMemo(
+    () => ({
+      themeState,
+      themeDispatch,
+    }),
+    [themeState]
+  );
+
+  // noinspection JSValidateTypes
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+		<ThemeProvider theme={themeValue.themeState.theme}>
+			<GlobalCSS />
+			<MobileNavProvider value={mobileNavValue}>
+				<>
+					<UpperPane />
+					<ModalOverlay />
+          <DesktopSideTab />
+          <Wrapper />
+          <Footer />
+				</>
+			</MobileNavProvider>
+		</ThemeProvider>
+  );
 }
 
-export default App
+export default App;
