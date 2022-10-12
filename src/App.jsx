@@ -12,6 +12,7 @@ import {
 import { DesktopSideTab } from "./layout-components/desktop-side-tab/desktop-side-tab.component.jsx";
 import { Wrapper } from "./layout-components/wrapper/wrapper.component.jsx";
 import { Footer } from "./layout-components/footer/footer.component.jsx";
+import { Home } from "./components/home/home.component.jsx";
 
 function App() {
   const [themeState, themeDispatch] = useReducer(
@@ -49,7 +50,7 @@ function App() {
 					<UpperPane />
 					<ModalOverlay />
           <DesktopSideTab />
-          <Wrapper />
+          <Home />
           <Footer />
 				</>
 			</MobileNavProvider>
