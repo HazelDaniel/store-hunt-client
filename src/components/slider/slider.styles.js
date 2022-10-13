@@ -186,11 +186,6 @@ export const SliderStyled = styled.div`
 							`;
 					return acc.concat(currCss);
 				}, "");
-				console.log(
-					css`
-						${interpolatedLoop}
-					`
-				);
 				return css`
 					${interpolatedLoop}
 				`;
