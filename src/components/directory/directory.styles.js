@@ -1,7 +1,7 @@
 import { default as styled, css } from "styled-components";
 import { debug, makeAbsoluteTopDiv, makeAbsoluteTopLefDiv, makeAbsoluteTopRightDiv, makeColFlexCenter, makeColFlexStart, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter } from "../../styles/styles";
 
-const _sectionTitle = css`
+export const _sectionTitle = css`
 	${makeAbsoluteTopDiv};
 	${makeRowFlexCenter};
 	width: max-content;

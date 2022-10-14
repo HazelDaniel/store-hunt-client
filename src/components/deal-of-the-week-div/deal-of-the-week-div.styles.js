@@ -1,5 +1,5 @@
 import {default as styled,css} from "styled-components";
-import { makeAbsoluteBottomLeftDiv, makeAbsoluteTopRightDiv, makeColFlexCenter, makeColFlexStart, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter, makeRowFlexStart } from "../../styles/styles";
+import { makeAbsoluteBottomLeftDiv, makeAbsoluteTopRightDiv, makeColFlexCenter, makeColFlexStart, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter, makeRowFlexStart, makeUnSelectableTextDiv } from "../../styles/styles";
 
 export const _makeHomeSection = css`
 	${makeFullWidthBlock};
@@ -69,6 +69,7 @@ export const DealOfTheWeekStyled = styled.section`
 		margin: 6rem auto 0 25%;
 		position: relative;
 		overflow: visible;
+		${makeUnSelectableTextDiv};
 
 		.DOW-item {
 			${makeFullSizeBlock};

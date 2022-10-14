@@ -182,7 +182,7 @@ export const SliderStyled = styled.div`
 						}
 					}
 				}
-			} 
+			}
 							`;
 					return acc.concat(currCss);
 				}, "");
