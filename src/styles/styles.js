@@ -2,119 +2,119 @@ import { createGlobalStyle, css } from "styled-components";
 
 //FUNCTIONS
 export const removeScrollBar = () => css`
-  &::-webkit-scrollbar {
-    display: none !important;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
+	&::-webkit-scrollbar {
+		display: none !important;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	-ms-overflow-style: none !important;
+	scrollbar-width: none !important;
 `;
 
 export const makeUnSelectableTextDiv = () => css`
-  * {
-    &::selection {
-      background-color: transparent;
-    }
-  }
+	* {
+		&::selection {
+			background-color: transparent;
+		}
+	}
 `;
 export const debug = css`
-  border: 0.1rem solid red;
-  background-color: #0000ff44;
+	border: 0.1rem solid red;
+	background-color: #0000ff44;
 `;
 export const makeFlexCenter = css`
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 `;
 export const makeFlex = css`
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 `;
 export const makeFlexEnd = css`
-  display: flex;
-  align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
 `;
 export const makeRowFlex = css`
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 `;
 export const makeRowFlexStart = css`
-  ${makeRowFlex};
-  flex-direction: row;
-  justify-content: flex-start;
+	${makeRowFlex};
+	flex-direction: row;
+	justify-content: flex-start;
 `;
 export const makeRowFlexCenter = css`
-  ${makeFlex};
-  flex-direction: row;
-  justify-content: center;
+	${makeFlex};
+	flex-direction: row;
+	justify-content: center;
 `;
 export const makeRowFlexEnd = css`
-  ${makeFlex};
-  flex-direction: row;
-  justify-content: flex-end;
+	${makeFlex};
+	flex-direction: row;
+	justify-content: flex-end;
 `;
 export const makeColFlexStart = css`
-  ${makeFlex};
-  flex-direction: column;
-  justify-content: flex-start;
+	${makeFlex};
+	flex-direction: column;
+	justify-content: flex-start;
 `;
 export const makeColFlexCenter = css`
-  ${makeFlex};
-  flex-direction: column;
-  justify-content: center;
+	${makeFlex};
+	flex-direction: column;
+	justify-content: center;
 `;
 export const makeColFlexEnd = css`
-  ${makeFlex};
-  flex-direction: column;
-  justify-content: flex-end;
+	${makeFlex};
+	flex-direction: column;
+	justify-content: flex-end;
 `;
 export const makeFullWidthBlock = css`
-  display: block;
-  width: 100%;
+	display: block;
+	width: 100%;
 `;
 export const makeFullHeightBlock = css`
-  display: block;
-  height: 100%;
+	display: block;
+	height: 100%;
 `;
 export const makeFullSizeBlock = css`
-  ${makeFullWidthBlock};
-  ${makeFullHeightBlock};
+	${makeFullWidthBlock};
+	${makeFullHeightBlock};
 `;
 export const makeAbsoluteDiv = css`
-  position: absolute;
-  content: "";
+	position: absolute;
+	content: "";
 `;
 export const makeAbsoluteTopDiv = css`
-  ${makeAbsoluteDiv};
-  top: 0;
+	${makeAbsoluteDiv};
+	top: 0;
 `;
 export const makeAbsoluteTopRightDiv = css`
-  ${makeAbsoluteTopDiv};
-  right: 0;
+	${makeAbsoluteTopDiv};
+	right: 0;
 `;
 export const makeAbsoluteTopLefDiv = css`
-  ${makeAbsoluteTopDiv};
-  left: 0;
+	${makeAbsoluteTopDiv};
+	left: 0;
 `;
 export const makeAbsoluteBottomDiv = css`
-  ${makeAbsoluteDiv};
-  bottom: 0;
+	${makeAbsoluteDiv};
+	bottom: 0;
 `;
 export const makeAbsoluteBottomRightDiv = css`
-  ${makeAbsoluteBottomDiv};
-  right: 0;
+	${makeAbsoluteBottomDiv};
+	right: 0;
 `;
 export const makeAbsoluteBottomLeftDiv = css`
-  ${makeAbsoluteBottomDiv};
-  left: 0;
+	${makeAbsoluteBottomDiv};
+	left: 0;
 `;
 export const makeMainContainer = css`
-  margin-top: 5rem;
-  ${makeFullWidthBlock};
-  ${makeColFlexStart};
+	margin-top: 5rem;
+	${makeFullWidthBlock};
+	${makeColFlexStart};
 
-  height: max-content;
-  position: relative;
-  min-height: 100vh;
+	height: max-content;
+	position: relative;
+	min-height: 100vh;
 `;
 
 //GLOBAL
@@ -244,7 +244,13 @@ export const GlobalCSS = createGlobalStyle`
   }
     html {
         box-sizing: border-box;
-        font-size: 10px;
+        font-size: 16px;
+        @media screen and (max-width: 650px){
+          font-size: 14px;
+        }
+        @media screen and (max-width: 450px){
+          font-size: 12px;
+        }
         ${removeScrollBar};
         height: 100%;
         width: 100%;
@@ -265,13 +271,6 @@ export const GlobalCSS = createGlobalStyle`
         position: relative;
         overflow: auto !important;
         width: 100vw;
-    
-        $numOfParts: 4;
-        $animTime: 1s;
-        $stagger: 0.08s;
-        $sliderReadyTrans: all $animTime/2 $animTime;
-        $maxLettersStagger: 6;
-        $letterStagger: 0.1s;
     }
     
 `;

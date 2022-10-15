@@ -1,6 +1,17 @@
 import { default as styled, css } from "styled-components";
 import { debug, makeAbsoluteTopDiv, makeAbsoluteTopLefDiv, makeAbsoluteTopRightDiv, makeColFlexCenter, makeColFlexStart, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter } from "../../styles/styles";
 
+const _imageAdjust = css`
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 2rem;
+
+	&::before {
+		display: none;
+	}
+`;
+
+
 export const _sectionTitle = css`
 	${makeAbsoluteTopDiv};
 	${makeRowFlexCenter};
@@ -112,7 +123,9 @@ export const DirectoryStyled = styled.div`
 					cursor: pointer;
 					position: relative;
 					overflow: visible;
-					font-size: 1rem;
+					font-size: .8rem;
+
+					
 
 					&:hover::before {
 						height: 0;
@@ -194,25 +207,17 @@ export const DirectoryStyled = styled.div`
 						transform: unset;
 					}
 
-					@mixin imageAdjust {
-						background-repeat: no-repeat;
-						background-size: cover;
-						padding: 2rem;
 
-						&::before {
-							display: none;
-						}
-					}
 
 					&:nth-of-type(1) {
 						background: url("../IMAGES/diagonal-stoke-bg-bottom.svg");
-						@include imageAdjust;
+						${_imageAdjust};
 						background-position: 100% 100%;
 					}
 
 					&:last-of-type {
 						background: url("../IMAGES/diagonal-stoke-bg-top.svg");
-						@include imageAdjust;
+						${_imageAdjust};
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { makeFullSizeBlock, makeRowFlexCenter } from "../../styles/styles.js";
+import { debug, makeFullSizeBlock, makeRowFlexCenter } from "../../styles/styles.js";
 
 export const DesktopNavTabStyled = styled.nav`
   border: unset;
@@ -9,6 +9,7 @@ export const DesktopNavTabStyled = styled.nav`
   max-width: 30%;
   margin-left: auto;
   height: 80%;
+  /* ${debug}; */
 
   @media screen and (max-width: 640px) {
     display: none !important;

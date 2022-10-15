@@ -10,7 +10,16 @@ const _footerPart = css`
 const _footerTitleText = css`
 	font-weight: 400;
 	margin-bottom: 1.5rem;
-	font-size: 1rem;
+	font-size: .8rem;
+`;
+
+const _footerSubText = css`
+	font-weight: 300;
+	font-size: 0.7rem;
+	text-align: start;
+	${makeFullWidthBlock};
+	margin-bottom: 0.6rem;
+	width: max-content;
 `;
 
 export const FooterStyled = styled.footer`
@@ -74,16 +83,19 @@ export const FooterStyled = styled.footer`
 				justify-content: space-evenly;
 				width: max-content;
 				text-align: start;
-
+				font-size: .7rem;
+				
 				span > a {
 					font-family: openSansLight;
 					font-weight: 300;
 					font-size: 0.7rem;
 				}
-
+				
 				span:first-of-type {
 					margin-left: 2rem;
 					margin-left: 1rem;
+					font-size: .8rem;
+					
 				}
 
 				span:nth-of-type(n + 1) {
@@ -169,8 +181,6 @@ export const TopRIghtStyled = styled.div`
 	${_footerPart};
 	height: max-content;
 
-	.FTR-sub-text {
-	}
 
 	.footer-contact-title {
 		font-family: openSansLight;
@@ -185,6 +195,7 @@ export const TopRIghtStyled = styled.div`
 		${makeFullWidthBlock};
 		margin-bottom: 0.6rem;
 		width: max-content;
+		${_footerSubText};
 
 
 	}

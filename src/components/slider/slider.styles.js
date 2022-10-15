@@ -170,14 +170,14 @@ export const SliderStyled = styled.div`
 							content: "";
 							background-image: inherit;
 							background-repeat: no-repeat !important;
-							background-size: cover;
-							background-position-x:  ${(i / 4) * 100}% ;
-							// background-position-x: ${i === 2 && `75%`};
+							background-size: cover !important;
+							background-position-x:  ${(i / 4) * 100}%;
+							background-position-x: ${i === 1 && `75%`};
 							left: 0;
 							top: 0;
 							background-color: ${({ theme }) => theme.$lessBrightColor};
 							@media screen and (min-width: 1210px) {
-								background-size: 100vw auto;
+								// background-size: 100vw auto;
 							}
 						}
 					}
@@ -210,54 +210,6 @@ export const SliderStyled = styled.div`
 				background-repeat: no-repeat;
 				transition: transform 1s/2 ease-in-out;
 
-				/* &:before {
-					content: "";
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					background-image: inherit;
-					background-position: center center;
-					transition: opacity $imageFadeAT;
-					opacity: 1; //remember to return the opacity to zero for the transition to work
-				} */
-				/* .slider__slide-part-inner */
-
-				/* @for $i from 1 through 4 {
-					#{$partRef}:nth-child(#{$i}) & {
-						$delayOut: (4 - $i) * 0.08s;
-						$delayIn: $i * 0.08s + 1s/5;
-
-						z-index: 4 - $i;
-						transition-delay: $delayOut;
-						transform: translateX(percentage($i / 4 * -1.3));
-
-						@include slideActive {
-							transition-delay: $delayIn;
-						}
-
-						&::before {
-							background-position-x: ($partW * ($i - 1) * -1);
-							// transition-delay: $delayOut + $imageFadeAT/2;
-							left: 0;
-							top: 0;
-							background-repeat: no-repeat;
-							background-size: cover;
-							background-color: ${({ theme }) => theme.$lessBrightColor};
-							@media screen and (min-width: 1210px) {
-								background-size: 100vw auto;
-							}
-
-							@include slideActive {
-								transition-delay: $delayIn;
-							}
-						}
-					}
-				} */
-
-				@include slideActive {
-					transform: translateX(0);
-					transition-timing-function: ease;
-				}
 			}
 		}
 	}

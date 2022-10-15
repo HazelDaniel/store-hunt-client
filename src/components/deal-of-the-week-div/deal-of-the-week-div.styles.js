@@ -19,6 +19,7 @@ export const DealOfTheWeekStyled = styled.section`
 	${makeRowFlexStart};
 	outline: 1rem solid ${({ theme }) => theme.$lessBrightColor};
 	border-bottom: 10rem solid ${({ theme }) => theme.$lessBrightColor};
+	z-index: 3 !important;
 
 	.DOW-side-tab {
 		${makeColFlexCenter};
@@ -137,14 +138,15 @@ export const DealOfTheWeekStyled = styled.section`
 	.DOW-time-div {
 		${makeAbsoluteBottomLeftDiv};
 		color: ${({ theme }) => theme.$darkAccentColor};
-		bottom: 4rem;
+		bottom: 0rem;
 		left: 6rem;
 		@media screen and (min-width: 1010px) {
+			bottom: unset;
 			left: 72vw;
 			transform: scale(0.8);
 			top: 15rem;
 		}
-
+		
 		.DOW-time-count-div {
 			font-size: 1.4rem;
 			${makeRowFlexCenter};
@@ -182,6 +184,7 @@ export const DealOfTheWeekStyled = styled.section`
 		font-weight: lighter;
 		font-family: openSansLight;
 		font-size: 0.8rem;
-		z-index: 3;
+		z-index: 3 !important;
+		cursor: pointer;
 	}
 `;

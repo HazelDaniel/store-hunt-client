@@ -7,7 +7,7 @@ import {
 
 const _computeLogoSize = ({ $variant }) => {
 		if ($variant === "footer") {
-			return `2rem`;
+			return `2.2rem`;
 		}
 		return `3rem`;
 	}

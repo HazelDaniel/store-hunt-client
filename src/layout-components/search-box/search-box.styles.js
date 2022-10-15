@@ -9,7 +9,7 @@ export const SearchBoxStyled = styled.div`
   justify-content: space-between;
   padding-right: 1rem;
   overflow: visible;
-  margin-right: auto;
+  margin: 0 auto;
 
   span {
     height: 2rem;
