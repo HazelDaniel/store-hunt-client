@@ -15,7 +15,8 @@ export const ShopProductStyled = styled.div`
 		overflow: hidden;
 		margin: 10%;
 		${makeUnSelectableTextDiv};
-		${debug};
+		max-width: 12rem;
+		height: 16rem;
 
 		* {
 			overflow: inherit;
@@ -41,7 +42,7 @@ export const ShopProductStyled = styled.div`
 				align-items: center;
 				padding: 0 1rem;
 				width: 80%;
-				background-color: $brightColor;
+				background-color: ${({ theme }) => theme.$brightColor};
 				box-shadow: 0.1rem 0.2rem 0.4rem $lightestShadowColor;
 
 				p {
@@ -51,7 +52,7 @@ export const ShopProductStyled = styled.div`
 					font-size: 0.8rem;
 					font-family: manjariMedium;
 					transform: translateY(25%);
-					color: $redTextColor;
+					color: ${({ theme }) => theme.$redTextColor};
 				}
 			}
 
@@ -72,7 +73,7 @@ export const ShopProductStyled = styled.div`
 					${makeColFlexStart};
 					align-items: center;
 					padding: 1rem 0;
-					background: linear-gradient($lessBrightColor 0%, $homeOutlineColor 100%);
+					background: linear-gradient(${({ theme }) => theme.$lessBrightColor} 0%, ${({ theme }) => theme.$homeOutlineColor} 100%);
 					opacity: 0;
 					transition: opacity 0.3s ease-in-out;
 
@@ -81,7 +82,7 @@ export const ShopProductStyled = styled.div`
 						width: 1.5rem;
 						height: 1.7rem;
 						border-radius: 0.2rem;
-						background-color: $lessBrightColor;
+						background-color: ${({ theme }) => theme.$lessBrightColor};
 					}
 
 					svg {
@@ -116,7 +117,7 @@ export const ShopProductStyled = styled.div`
 			}
 
 			* {
-				color: $darkAccentColor;
+				color: ${({ theme }) => theme.$darkAccentColor};
 			}
 
 
@@ -153,7 +154,7 @@ export const ShopProductStyled = styled.div`
 						width: 0.6rem;
 						border-radius: 50%;
 						margin: 0 0.3rem;
-						border: 0.1rem solid $homeOutlineColor;
+						border: 0.1rem solid ${({ theme }) => theme.$homeOutlineColor};
 						transform: scale(1.1);
 
 						&#C-2BCBD6 {
@@ -183,11 +184,11 @@ export const ShopProductStyled = styled.div`
 					& > path {
 						// a toggle between these two fills to none will give us the rating effect we need
 						&:first-of-type {
-							fill: $accentColor;
+							fill: ${({ theme }) => theme.$accentColor};
 						}
 
 						&:last-of-type {
-							fill: $accentColor;
+							fill: ${({ theme }) => theme.$accentColor};
 						}
 					}
 
@@ -199,7 +200,7 @@ export const ShopProductStyled = styled.div`
 							}
 
 							&:last-of-type {
-								fill: $accentColor;
+								fill: ${({ theme }) => theme.$accentColor};
 							}
 						}
 					}
