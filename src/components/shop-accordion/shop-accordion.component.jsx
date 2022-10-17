@@ -1,19 +1,34 @@
+import { memo } from "react";
+import { useReducer } from "react";
+import { initialShopAccordionState, shopAccordionReducer, __toggleAccordion } from "./shop-accordion.reducer";
+import { AccordionListStyled, ShopAccordionStyled } from "./shop-accordion.styles";
 
-
-export const ShopAccordion = ({children,titleText}) => {
+export const ShopAccordion = memo(({ section,isFirst }) => {
+	const [accordionState, accordionDispatch] = useReducer(shopAccordionReducer, initialShopAccordionState, (state = initialShopAccordionState) => state);
 	return (
-		<div className="SSPM-accordion">
-			<p className="SSPM-section-title">{titleText }</p>
-			<span className="SSPM-section-toggle">
-				<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
-						d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-						fill="#08090A"
-					></path>
-				</svg>
-			</span>
-		</div>
+		<ShopAccordionStyled className={`shop-accordion  ${isFirst && "first"}`}>
+			<div className={`SSPM-accordion`}>
+				<p className="SSPM-section-title">{section.title.toUpperCase()}</p>
+				<span
+					className="SSPM-section-toggle"
+					onClick={() => {
+						accordionDispatch(__toggleAccordion());
+					}}
+				>
+					<svg viewBox="0 0 5 8" fill="none" className={!accordionState.accordionOpened && "collapsed-toggler"}>
+						<path fillRule="evenodd" clipRule="evenodd" d="M.96.579l3.23 3.23a.27.27 0 010 .381L.96 7.421a.27.27 0 11-.381-.38L3.619 4 .58.96a.27.27 0 01.38-.381z" fill="#08090A" />
+					</svg>
+				</span>
+			</div>
+			<ul className={`SSPM-section-list ${section.isVisual ? section.className : ""} ${!accordionState.accordionOpened && "collapsed"}`}>
+				{section.list.map((entry) => {
+					return (
+						<AccordionListStyled className={entry.isActive && `active`} id={section.isColorList && `C-${entry.id}`} $listId={section.isColorList && `C-${entry.id}`}>
+							{!section.isColorList && entry.value}
+						</AccordionListStyled>
+					);
+				})}
+			</ul>
+		</ShopAccordionStyled>
 	);
-}
+});

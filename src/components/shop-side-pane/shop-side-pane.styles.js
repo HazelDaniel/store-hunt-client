@@ -8,18 +8,10 @@ import {
 	makeFullHeightBlock,
 	makeFullSizeBlock,
 	makeFullWidthBlock,
-	makeRowFlexCenter,
-	makeRowFlexStart,
 	removeScrollBar,
 } from "../../styles/styles";
 
-const _makeVisualList = css`
-	${makeRowFlexStart};
-	flex-wrap: row;
-	flex-basis: 2rem;
-`;
-
-const _computeTogglerPosition = ({ $closed =false }) => {
+const _computeTogglerPosition = ({ $closed = false }) => {
 	if ($closed) {
 		return css`
 			position: fixed;
@@ -42,10 +34,8 @@ const _computeTogglerPosition = ({ $closed =false }) => {
 					transform: scale(-1, 0.8);
 				}
 			}
-
 		`;
-	}
-	else {
+	} else {
 		return css`
 			${makeAbsoluteTopRightDiv};
 			top: 35%;
@@ -58,7 +48,7 @@ const _computeTogglerPosition = ({ $closed =false }) => {
 			}
 		`;
 	}
-}
+};
 
 const _styleSidePaneOnClose = ({ $closed }) => {
 	if (!$closed) return;
@@ -95,12 +85,11 @@ export const ShopSidePaneStyled = styled.div`
 		box-shadow: unset !important;
 	}
 `;
-
 export const ShopSidePaneContainerStyled = styled.div`
 	${makeFullSizeBlock};
 	${makeColFlexStart};
 	align-items: flex-start;
-	border: 0.2rem solid ${({ theme }) => theme.$lessBrightColor};
+	border: 0.2rem solid ${({ theme }) => theme.$brightColor};
 	border-left: none;
 	padding: 2rem;
 	padding-right: 1rem;
@@ -108,165 +97,9 @@ export const ShopSidePaneContainerStyled = styled.div`
 	overflow: scroll;
 	${removeScrollBar};
 	overflow-x: visible !important;
-
-	.SSPM-section {
-		position: relative;
-		${makeFullWidthBlock};
-		${makeColFlexStart};
-		align-items: flex-start;
-		height: fit-content;
-		margin-bottom: 2rem;
-
-		ul {
-			list-style-type: none;
-			${makeFullWidthBlock};
-			${makeColFlexStart};
-			align-items: flex-start;
-			position: relative;
-			padding-bottom: 1rem;
-			margin-top: 1rem;
-
-			li {
-				cursor: pointer;
-			}
-
-			&::after {
-				${makeAbsoluteBottomDiv};
-				background-color: ${({ theme }) => theme.$homeOutlineColor};
-				transform: translateX(50%);
-				width: 80%;
-				height: 0.1rem;
-				right: 50%;
-			}
-		}
-
+	.shop-accordion {
 		&.first {
 			margin-top: 3rem;
-		}
-
-		&:last-of-type {
-			ul {
-				&::after {
-					display: none;
-				}
-			}
-		}
-
-		.SSPM-accordion {
-			height: 2.5rem;
-			${makeFullWidthBlock};
-			${makeRowFlexStart};
-			justify-content: space-between;
-			overflow: hidden;
-
-			.SSPM-section-title {
-				color: ${({ theme }) => theme.$shopSideTabTitleColor};
-				font-family: openSansMedium;
-				font-weight: 600;
-			}
-
-			.SSPM-section-toggle {
-				${makeFullHeightBlock};
-				${makeColFlexCenter};
-
-				svg {
-					height: 80%;
-					margin: auto 0;
-					transform: scale(0.6) rotateZ(90deg);
-					cursor: pointer;
-
-					path {
-						fill: ${({ theme }) => theme.$shopSideTabTitleColor};
-					}
-				}
-			}
-		}
-
-		.SSPM-section-list {
-			li {
-				margin: 0.5rem 0;
-				font-size: 0.8rem;
-				${makeFullWidthBlock};
-			}
-
-			&.size-list {
-				${_makeVisualList};
-
-				li {
-					width: max-content;
-					min-width: 3rem;
-					height: 2rem;
-					${makeRowFlexCenter};
-					display: inline-flex !important;
-					margin: 0 0.5rem;
-					border: 0.1rem solid ${({ theme }) => theme.$shopSizeChipColor};
-					color: ${({ theme }) => theme.$shopSizeChipColor};
-					transition: all 0.3s ease-in-out;
-
-					&:first-of-type {
-						margin-right: 0;
-					}
-
-					&:hover {
-						background-color: ${({ theme }) => theme.$darkAccentColor};
-						color: ${({ theme }) => theme.$lessBrightColor};
-					}
-
-					&.active {
-						background-color: ${({ theme }) => theme.$darkAccentColor};
-						color: ${({ theme }) => theme.$lessBrightColor};
-						border: none;
-					}
-				}
-			}
-
-			&.colors-list {
-				${_makeVisualList};
-
-				li {
-					margin: 0 1rem;
-					width: 2rem;
-					height: 2rem;
-					border-radius: 50%;
-					border: 0.1rem solid ${({ theme }) => theme.$homeOutlineColor};
-
-					&#C-2BCBD6 {
-						background-color: #2bcbd6;
-					}
-
-					&#C-4878FC {
-						background-color: #4878fc;
-					}
-
-					&#C-CD1613 {
-						background-color: #cd1613;
-					}
-
-					&#C-000000 {
-						background-color: #000000;
-					}
-				}
-			}
-
-			&.tags-list {
-				all: unset;
-				${makeFullWidthBlock};
-				overflow: hidden;
-				height: max-content;
-				flex: row wrap;
-
-				li {
-					width: 40%;
-					min-width: 5rem;
-					height: 1.5rem;
-					margin: 0.5rem;
-					${makeColFlexCenter};
-					display: inline-flex;
-					background-color: ${({ theme }) => theme.$accentColorTrans};
-					color: ${({ theme }) => theme.$lessBrightColor};
-					border-radius: 0.3rem;
-				}
-			}
 		}
 	}
 `;
@@ -282,7 +115,7 @@ export const ShopSearchBoxStyled = styled.div`
 	padding: 0.5rem;
 	padding-right: 1rem;
 	overflow: visible !important;
-	background-color: ${({ theme }) => theme.$lessBrightColor};
+	background-color: ${({ theme }) => theme.$brightColor};
 	box-shadow: 0.1rem 0.2rem 0.3rem ${({ theme }) => theme.$homeOutlineColor};
 
 	span {

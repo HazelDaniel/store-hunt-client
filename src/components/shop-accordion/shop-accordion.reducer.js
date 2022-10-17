@@ -26,7 +26,7 @@ const toggleAccordion = (state) => {
 };
 
 
-export const shopSidePaneReducer = (state = initialShopAccordionState, action) => {
+export const shopAccordionReducer = (state = initialShopAccordionState, action) => {
 	switch (action.type) {
 		case shopAccordionActions.toggleAccordion:
 			return toggleAccordion(state);

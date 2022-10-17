@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useReducer } from "react"
 import { initialShopSidePaneState, shopSidePaneReducer, __openSidePane, __toggleSidePane } from "../../reducers/shop-side-pane.reducer"
+import { ShopAccordion } from "../shop-accordion/shop-accordion.component"
+import { SHOP_SIDE_PANE_DATA } from "./shop-side-pane.data"
 import { ShopSearchBoxStyled, ShopSidePaneContainerStyled, ShopSidePaneStyled, ShopSideTabTogglerStyled } from "./shop-side-pane.styles"
 
 const handleWindowResize = (dispatch,action) => {
@@ -30,132 +32,9 @@ export const ShopSidePane = () => {
 					</span>
 					<input type="search" name="" id="" placeholder="search for your product here" />
 				</ShopSearchBoxStyled>
-				<div className="SSPM-section first">
-					<div className="SSPM-accordion">
-						<p className="SSPM-section-title">CATEGORIES</p>
-						<span className="SSPM-section-toggle">
-							<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-									fill="#08090A"
-								></path>
-							</svg>
-						</span>
-					</div>
-					<ul className="SSPM-section-list">
-						<li>MEN(210)</li>
-						<li>WOMEN(150)</li>
-						<li>HATS(100)</li>
-						<li>KIDS(100)</li>
-						<li>BAGS(100)</li>
-						<li>SNEAKERS (100)</li>
-						<li>JACKETS (100)</li>
-					</ul>
-				</div>
-				<div className="SSPM-section">
-					<div className="SSPM-accordion">
-						<p className="SSPM-section-title">BRANDING</p>
-						<span className="SSPM-section-toggle">
-							<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-									fill="#08090A"
-								></path>
-							</svg>
-						</span>
-					</div>
-					<ul className="SSPM-section-list">
-						<li>LOUIS VUITTON</li>
-						<li>CAVALLI</li>
-						<li>NIKE</li>
-					</ul>
-				</div>
-				<div className="SSPM-section">
-					<div className="SSPM-accordion">
-						<p className="SSPM-section-title">FILTER PRICE</p>
-						<span className="SSPM-section-toggle">
-							<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-									fill="#08090A"
-								></path>
-							</svg>
-						</span>
-					</div>
-					<ul className="SSPM-section-list">
-						<li>$0.00 - $50.00</li>
-						<li>$50.00 - $100.00</li>
-						<li>$100.00 - $150.00</li>
-					</ul>
-				</div>
-				<div className="SSPM-section">
-					<div className="SSPM-accordion">
-						<p className="SSPM-section-title">SIZE</p>
-						<span className="SSPM-section-toggle">
-							<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-									fill="#08090A"
-								></path>
-							</svg>
-						</span>
-					</div>
-					<ul className="SSPM-section-list size-list">
-						<li className="active">XXL</li>
-						<li>S</li>
-						<li>XL</li>
-						<li>L</li>
-					</ul>
-				</div>
-				<div className="SSPM-section">
-					<div className="SSPM-accordion">
-						<p className="SSPM-section-title">COLORS</p>
-						<span className="SSPM-section-toggle">
-							<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-									fill="#08090A"
-								></path>
-							</svg>
-						</span>
-					</div>
-					<ul className="SSPM-section-list colors-list">
-						<li id="C-4878FC"></li>
-						<li id="C-CD1613"></li>
-						<li id="C-2BCBD6"></li>
-						<li id="C-000000"></li>
-					</ul>
-				</div>
-				<div className="SSPM-section">
-					<div className="SSPM-accordion">
-						<p className="SSPM-section-title">TAGS</p>
-						<span className="SSPM-section-toggle">
-							<svg viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.959606 0.578856L4.19038 3.80963C4.29552 3.91477 4.29552 4.08523 4.19038 4.19038L0.959606 7.42114C0.854465 7.52629 0.683997 7.52629 0.578856 7.42114C0.473715 7.316 0.473715 7.14554 0.578856 7.04039L3.61925 4L0.578856 0.959606C0.473715 0.854465 0.473715 0.683997 0.578856 0.578856C0.683997 0.473715 0.854465 0.473715 0.959606 0.578856Z"
-									fill="#08090A"
-								></path>
-							</svg>
-						</span>
-					</div>
-					<ul className="SSPM-section-list tags-list">
-						<li className="SSPM-tag">PRODUCT</li>
-						<li className="SSPM-tag">WOMAN</li>
-						<li className="SSPM-tag">HATS</li>
-					</ul>
-				</div>
+				{Object.values(SHOP_SIDE_PANE_DATA).map((section,i) => {
+					return <ShopAccordion section={section} isFirst={i === 0} />;
+				})}
 			</ShopSidePaneContainerStyled>
 			<ShopSideTabTogglerStyled
 				$closed={window.innerWidth >= 1095 ? false : sidePaneState.sidePaneOpened ? false : !sidePaneState.sidePaneOpened ? true : false}
