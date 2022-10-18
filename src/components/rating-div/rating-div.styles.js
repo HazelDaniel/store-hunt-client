@@ -1,27 +1,12 @@
-import styled from "styled-components";
-import { makeRowFlexEnd } from "../../styles/styles";
+import styled, { css } from "styled-components";
+import { makeRowFlexEnd, makeRowFlexStart } from "../../styles/styles";
+import { _makeCenteredDivSize } from "../product-details-container/product-details-container.styles";
 
-export const RatingDivStyled = styled.div`
-	margin-right: 0.5rem;
-	width: 30%;
-	${makeRowFlexEnd};
-	height: 1rem;
 
-	svg {
-		height: 80%;
+const _computeRatingsCount = ({ $ratings }) => {
 
-		& > path {
-			// a toggle between these two fills to none will give us the rating effect we need
-			&:first-of-type {
-				fill: ${({theme})=>theme.$accentColor};
-			}
-
-			&:last-of-type {
-				fill: ${({theme})=>theme.$accentColor};
-			}
-		}
-
-		&:nth-of-type(n + 3) {
+	return css`
+		&:nth-of-type(n + ${$ratings + 1}) {
 			& > path {
 				// a toggle between these two fills to none will give us the rating effect we need
 				&:first-of-type {
@@ -29,9 +14,33 @@ export const RatingDivStyled = styled.div`
 				}
 
 				&:last-of-type {
-					fill: ${({theme})=>theme.$accentColor};
+					fill: ${({ theme }) => theme.$accentColor};
 				}
 			}
 		}
+	`;
+};
+
+export const RatingDivStyled = styled.div`
+	margin-right: 0.5rem;
+	width: 30%;
+	height: 1rem;
+	${makeRowFlexEnd};
+
+	svg {
+		height: 80%;
+
+		& > path {
+			// a toggle between these two fills to none will give us the rating effect we need
+			&:first-of-type {
+				fill: ${({ theme }) => theme.$accentColor};
+			}
+
+			&:last-of-type {
+				fill: ${({ theme }) => theme.$accentColor};
+			}
+		}
+
+		${_computeRatingsCount};
 	}
 `;

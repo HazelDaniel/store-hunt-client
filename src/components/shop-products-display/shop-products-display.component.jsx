@@ -4,11 +4,11 @@ import { ShopProductsDisplayStyled, PaginationButtonsDivStyled, ShopPaginationBu
 export const ShopProductsDisplay = () => {
 	return (
 		<ShopProductsDisplayStyled>
-			<ShopProduct />
-			<ShopProduct />
+			<ShopProduct ratings={3} />
+			<ShopProduct ratings={4} />
 			<PaginationButtonsDivStyled>
-				<div class="shop-pagination-buttons">
-					<ShopPaginationButtonStyled class="spb-active">1</ShopPaginationButtonStyled>
+				<div className="shop-pagination-buttons">
+					<ShopPaginationButtonStyled className="spb-active">1</ShopPaginationButtonStyled>
 					<ShopPaginationButtonStyled>2</ShopPaginationButtonStyled>
 					<ShopPaginationButtonStyled>3</ShopPaginationButtonStyled>
 					<ShopLoadMoreButtonStyled>

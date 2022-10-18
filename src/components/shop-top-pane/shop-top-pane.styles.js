@@ -54,7 +54,7 @@ export const ShopTopPaneStyled = styled.div`
 				${makeRowFlexCenter};
 				align-items: center;
 				display: inline-flex;
-				
+				margin: 0 .5rem;
 				svg {
 					height: 100%;
 				}
@@ -63,7 +63,6 @@ export const ShopTopPaneStyled = styled.div`
 			.shop-nav-label-link {
 				font-weight: 500;
 				/* ${debug}; */
-				margin-right: 5px;
 				font-weight: bolder !important;
 			}
 		}

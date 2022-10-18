@@ -1,17 +1,19 @@
+import { NavThemeIconDivStyled } from "../../layout-components/mobile-nav-tab/mobile-nav-tab.styles";
 import { ShopTopPaneStyled } from "./shop-top-pane.styles";
 
-export const ShopTopPane = () => {
+export const ShopTopPane = ({navText}) => {
 	return (
 		<ShopTopPaneStyled>
 			<div className="shop-nav-label">
-				<p className="shop-nav-label-title">shop</p>
+				<p className="shop-nav-label-title">{navText.subPageText?navText.subPageText:navText.rootPageText }</p>
 				<div className="shop-nav-label-links-div">
-					<span className="shop-nav-label-link">SHOP</span>
+					<span className="shop-nav-label-link">{navText.rootPageText}</span>
 					<span className="shop-nav-label-divide">
 						<svg viewBox="0 0 5 8" fill="none">
 							<path d="M.96.579l3.23 3.23a.27.27 0 010 .381L.96 7.421a.27.27 0 11-.381-.38L3.619 4 .58.96A.27.27 0 01.96.579z" fill="#08090A" />
 						</svg>
 					</span>
+					{navText.subPageText && <span>{navText.subPageText}</span>}
 				</div>
 			</div>
 			<div className="shop-cart-total-div">

@@ -3,7 +3,7 @@ import { RatingDivStyled } from "./rating-div.styles";
 export const RatingDiv = ({ ratings }) => {
 	// ratings is a number
 	return (
-		<RatingDivStyled $ratings={ratings}>
+		<RatingDivStyled className="rating-div" $ratings={ratings}>
 			<svg viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<mask id="path-1-inside-1_17_196" fill="white">
 					<path

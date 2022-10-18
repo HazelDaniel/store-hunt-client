@@ -13,6 +13,7 @@ import { DesktopSideTab } from "./layout-components/desktop-side-tab/desktop-sid
 import { Footer } from "./layout-components/footer/footer.component.jsx";
 import { Home } from "./components/home/home.component.jsx";
 import { Shop } from "./components/shop/shop.component.jsx";
+import { ProductDetails } from "./components/product-details/product-details.component.jsx";
 
 function App() {
   const [themeState, themeDispatch] = useReducer(
@@ -50,7 +51,9 @@ function App() {
 					<UpperPane />
 					<ModalOverlay />
           <DesktopSideTab />
-          <Shop />
+          {/* <Home /> */}
+          {/* <Shop /> */}
+          <ProductDetails />
           <Footer />
 				</>
 			</MobileNavProvider>

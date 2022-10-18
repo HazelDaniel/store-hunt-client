@@ -1,36 +1,35 @@
 import styled from "styled-components";
 import { makeAbsoluteTopRightDiv, makeColFlexCenter, makeFullWidthBlock, makeRowFlexCenter } from "../../styles/styles";
 
-
 export const CustomSelectStyled = styled.div`
-		margin-right: 3.5vw;
-		position: relative;
-		font-family: Arial;
-		width: 25vw;
-		max-width: 15rem;
+	margin-right: 3.5vw;
+	position: relative;
+	font-family: Arial;
+	width: 25vw;
+	max-width: 15rem;
+overflow: visible;
+	select {
+		display: none;
+	}
 
-		select {
-			display: none;
+	${makeColFlexCenter};
+
+	.select-items {
+		position: absolute;
+		background-color: ${({ theme }) => theme.$accentColor};
+		top: 110%;
+		left: 0;
+		right: 0;
+		z-index: 5 !important;
+
+		div {
+			text-align: center;
+			padding: 0.5rem;
+			border: 1px solid transparent;
+			border-color: transparent transparent ${({ theme }) => theme.$accentColor} transparent;
+			cursor: pointer;
 		}
-
-		${makeColFlexCenter};
-
-		.select-items {
-			position: absolute;
-			background-color: ${({ theme }) => theme.$accentColor};
-			top: 110%;
-			left: 0;
-			right: 0;
-			z-index: 5;
-
-			div {
-				text-align: center;
-				padding: 0.5rem;
-				border: 1px solid transparent;
-				border-color: transparent transparent ${({ theme }) => theme.$accentColor} transparent;
-				cursor: pointer;
-			}
-		}
+	}
 
 	.select-selected {
 		${makeFullWidthBlock};

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useRef } from "react";
 import { CustomSelectStyled } from "./custom-select.styles";
 import { convertToCustomSelect } from "./custom-select.utils";
@@ -5,12 +6,21 @@ import { convertToCustomSelect } from "./custom-select.utils";
 
 
 export const CustomSelect = () => {
-	const selectRef = useRef(null);
+	useEffect(() => {
+		convertToCustomSelect();
+	}, []);
 	return (
-		<CustomSelectStyled ref={selectRef}>
-			{convertToCustomSelect(selectRef.current)}
+		<CustomSelectStyled className="custom-select" key={"11d1"}>
 			<select>
-				<option value="high to low">High To Low</option>
+				<option value="placeholder">None (default)</option>
+				<option
+					value="none"
+					onClick={() => {
+						console.log("this.value");
+					}}
+				>
+					None
+				</option>
 				<option value="high to low">High To Low</option>
 				<option value="low to high">Low To High</option>
 			</select>

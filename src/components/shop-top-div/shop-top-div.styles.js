@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { makeFullWidthBlock, makeRowFlexStart } from "../../styles/styles";
+import { makeFullWidthBlock, makeRowFlexEnd, makeRowFlexStart } from "../../styles/styles";
 
 
 export const ShopTopDivStyled = styled.div`
@@ -12,6 +12,7 @@ export const ShopTopDivStyled = styled.div`
 	align-items: flex-end;
 	height: max-content;
 	padding-bottom: 0.5rem;
+	overflow: visible !important;
 
 	* {
 		font-family: latoMedium !important;
@@ -22,6 +23,17 @@ export const ShopTopDivStyled = styled.div`
 		width: max-content;
 		min-width: 40%;
 		text-align: start;
+	}
+	.shop-filter-div {
+		min-width: 40%;
+		${makeRowFlexEnd};
+		overflow: visible !important;
+		align-items: flex-end;
+
+		span {
+			margin-right: 1rem;
+			padding-bottom: 0.2rem;
+		}
 	}
 
 	@media screen and (min-width: 1095px) {
