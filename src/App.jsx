@@ -14,6 +14,11 @@ import { Footer } from "./layout-components/footer/footer.component.jsx";
 import { Home } from "./components/home/home.component.jsx";
 import { Shop } from "./components/shop/shop.component.jsx";
 import { ProductDetails } from "./components/product-details/product-details.component.jsx";
+import { Cart } from "./components/cart/cart.component.jsx";
+import { Checkout } from "./components/checkout/checkout.component.jsx";
+import { Auth } from "./components/auth/auth.component.jsx";
+import { Blog } from "./components/blog/blog.component.jsx";
+import { Contact } from "./components/contact/contact.component.jsx";
 
 function App() {
   const [themeState, themeDispatch] = useReducer(
@@ -49,11 +54,16 @@ function App() {
 			<MobileNavProvider value={mobileNavValue}>
 				<>
 					<UpperPane />
-					<ModalOverlay />
+          <ModalOverlay />
           <DesktopSideTab />
+          {/* <Auth /> */}
+          {/* <Blog /> */}
+          {/* <Cart /> */}
+          {/* <Checkout /> */}
+          <Contact />
           {/* <Home /> */}
+          {/* <ProductDetails /> */}
           {/* <Shop /> */}
-          <ProductDetails />
           <Footer />
 				</>
 			</MobileNavProvider>

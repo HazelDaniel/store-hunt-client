@@ -32,11 +32,12 @@ export const ShopTopPaneStyled = styled.div`
 		min-width: 8rem;
 		${makeColFlexCenter};
 		align-items: flex-start;
+		text-transform: uppercase;
 
 		.shop-nav-label-title {
 			font-family: nunito;
 			font-size: 1.5rem;
-			text-transform: capitalize;
+			text-transform: capitalize !important;
 			margin-bottom: 0.5rem;
 		}
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MobileNavTogglerStyled = styled.div`
   margin-right: 1rem;
-  transform: scale(0.8);
+  transform: scale(0.7);
 
   .open {
     width: 4rem;

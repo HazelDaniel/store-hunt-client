@@ -20,7 +20,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(${window.location.origin}/IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
 								}}
 							></div>
 						</div>
@@ -28,7 +28,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(${window.location.origin}/IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
 								}}
 							></div>
 						</div>
@@ -36,7 +36,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(${window.location.origin}/IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
 								}}
 							></div>
 						</div>
@@ -44,14 +44,14 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(${window.location.origin}/IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
 								}}
 							></div>
 						</div>
 					</div>
 					<div className="slider-hero-image-div">
 						<div className="slider-hero-image-circle"></div>
-						<img src={`${window.location.origin}/IMAGES/home/hero-men.png`} alt="" className="slider-hero-image" />
+						<img src={`IMAGES/home/hero-men.png`} alt="" className="slider-hero-image" />
 					</div>
 				</div>
 			</div>

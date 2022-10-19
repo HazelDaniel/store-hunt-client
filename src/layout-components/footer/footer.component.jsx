@@ -10,7 +10,7 @@ export const Footer = () => {
 					<p className="footer-moto">ATTENDING TO ALL CUSTOMER NEEDS IS OUR TOP AND ONLY PRIORITY</p>
 					<div className="footer-payment-client-div">
 						<p>PAYMENTS</p>
-						<img src={`${window.location.origin}/IMAGES/payment.png`} className="footer-payment-client-div-image" />
+						<img src={`IMAGES/payment.png`} className="footer-payment-client-div-image" />
 					</div>
 				</TopLeftStyled>
 				<TopMiddleStyled>
