@@ -60,9 +60,9 @@ function App() {
           {/* <Blog /> */}
           {/* <Cart /> */}
           {/* <Checkout /> */}
-          <Contact />
+          {/* <Contact /> */}
           {/* <Home /> */}
-          {/* <ProductDetails /> */}
+          <ProductDetails />
           {/* <Shop /> */}
           <Footer />
 				</>

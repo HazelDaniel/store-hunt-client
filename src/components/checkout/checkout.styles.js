@@ -12,104 +12,104 @@ import {
 	makeRowFlexStart,
 } from "../../styles/styles";
 
-
 const _uniformlySpacedContainer = css`
-		${makeFullWidthBlock};
-		${makeRowFlexStart}
-		justify-content: space-between;
+	${makeFullWidthBlock};
+	${makeRowFlexStart}
+	justify-content: space-between;
 `;
 export const _customForm = css`
-		font-family: latoMedium;
-		text-transform: capitalize;
-		padding: 0 0.5rem;
-		${makeFullWidthBlock};
-		height: max-content;
+	font-family: latoMedium;
+	text-transform: capitalize;
+	padding: 0 0.5rem;
+	${makeFullWidthBlock};
+	height: max-content;
 
+	overflow: visible;
+	/* display: none; */
+
+	.inline-input-div {
 		overflow: visible;
-		/* display: none; */
+		${makeFullWidthBlock};
+		${makeRowFlexStart};
+		position: relative;
+		height: max-content;
+		margin: 2rem 0;
+		margin-top: 2rem;
 
-		.inline-input-div {
-			overflow: visible;
-			${makeFullWidthBlock};
-			${makeRowFlexStart};
-			position: relative;
-			height: max-content;
-			margin: 2rem 0;
+		input[type="tel"] {
 			margin-top: 2rem;
+		}
 
-			input[type="tel"] {
+		&:first-of-type {
+			.S {
 				margin-top: 2rem;
 			}
 
-			&:first-of-type {
-				.S {
-					margin-top: 2rem;
-				}
-
-				label {
-					top: 0rem;
-				}
-			}
-
-			.S {
-				margin-top: 4rem;
-				width: 45%;
-
-				&:first-of-type {
-					margin-right: 3rem;
-				}
-			}
-
 			label {
-				${makeAbsoluteTopLefDiv};
-				top: 0;
-
-				&:nth-of-type(n + 2) {
-					left: calc(45% + 3rem);
-				}
+				top: 0rem;
 			}
 		}
 
-		input {
-			${makeFullWidthBlock};
-			height: 2rem;
-			outline: unset;
-			padding-left: 1rem;
-			border-radius: 0.3rem;
-			background-color: transparent;
-			border: 0.1rem solid ${({ theme }) => theme.$singleProductMainTextColor};
-			color: $darkAccentColor;
+		.S {
+			margin-top: 4rem;
+			width: 45%;
 
-			&::placeholder {
-				color: ${({ theme }) => theme.$singleProductMainTextColor};
-				text-transform: capitalize;
-				font-family: latoLight;
-			}
-
-			&[type="email"] {
-				&::placeholder {
-					text-transform: unset;
-				}
-			}
-
-			&.L {
-				~ label {
-					margin-top: 2rem;
-				}
-			}
-
-			&:focus {
-				&::placeholder {
-					transform: scale(0.8) translate(-1.5rem, -0.5rem);
-					transition: transform 0.2s ease-in-out;
-				}
+			&:first-of-type {
+				margin-right: 3rem;
 			}
 		}
 
 		label {
-			display: block;
-			margin-bottom: 1.5rem;
+			${makeAbsoluteTopLefDiv};
+			top: 0;
+
+			&:nth-of-type(n + 2) {
+				left: calc(45% + 3rem);
+			}
 		}
+	}
+
+	input {
+		${makeFullWidthBlock};
+		height: 2rem;
+		outline: unset;
+		padding-left: 1rem;
+		border-radius: 0.3rem;
+		background-color: transparent;
+		border: 0.1rem solid ${({ theme }) => theme.$singleProductMainTextColor};
+		color: $darkAccentColor;
+
+		&::placeholder {
+			color: ${({ theme }) => theme.$singleProductMainTextColor};
+			text-transform: capitalize;
+			font-family: latoLight;
+		}
+
+		&[type="email"] {
+			&::placeholder {
+				text-transform: unset;
+			}
+		}
+
+		&.L {
+			~ label {
+				margin-top: 2rem;
+			}
+		}
+
+		&:focus {
+			&::placeholder {
+				transform: translateY( -0.5rem);
+				font-size: smaller;
+				transition: transform 0.2s ease-in-out;
+			}
+		}
+	}
+
+	label {
+		display: block;
+		margin-bottom: 1.5rem;
+	}
 `;
 export const CheckoutStyled = styled.section`
 	${makeFullWidthBlock};
@@ -235,8 +235,6 @@ export const CheckoutStyled = styled.section`
 					margin-bottom: 10rem;
 				}
 			}
-
-			
 
 			.CB-title {
 				${makeFullWidthBlock};

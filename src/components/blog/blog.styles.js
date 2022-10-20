@@ -158,7 +158,7 @@ export const BlogBodyStyled = styled.section`
 
 		.blog-load-more-cta {
 			${makeAbsoluteBottomDiv};
-			bottom: -5rem;
+			bottom: -20%;
 			width: max-content;
 			padding: 1rem;
 			border: none;

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { debug, makeAbsoluteBottomRightDiv, makeAbsoluteTopDiv, makeColFlexCenter, makeColFlexEnd, makeColFlexStart, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter, makeRowFlexStart, makeUnSelectableTextDiv, removeScrollBar } from "../../styles/styles";
+import { _computeListColor } from "../shop-accordion/shop-accordion.styles";
 
 export const _makeCenteredDivSize = css`
 		width: 15rem;
@@ -170,17 +171,8 @@ export const ProductDetailsContainerStyled = styled.section`
 						width: 2rem;
 						height: 2rem;
 						border-radius: 50%;
+						border: 0.1rem solid ${({ theme }) => theme.$homeOutlineColor};
 
-						&:first-of-type {
-							background-color: ${({ theme }) => theme.$accentColor};
-							border: 0.1rem solid ${({ theme }) => theme.$homeOutlineColor};
-							justify-self: flex-start;
-						}
-
-						&:last-of-type {
-							background-color: ${({ theme }) => theme.$darkAccentColor};
-							border: 0.1rem solid ${({ theme }) => theme.$homeOutlineColor};
-						}
 					}
 				}
 			}

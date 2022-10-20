@@ -3,50 +3,52 @@ const themeActionTypes = {
 };
 
 const lightTheme = {
-  // HOME PAGE
-  $homeFadingTextColor: "#333436",
-  $homeGoldLikeColor: "#AB893B",
-  $homeDarkColor: "#000000",
-  $DirectoryCTATextColor: "#272727",
-  $DirectoryBlurColor: "#d4d4d4a8",
-  $DirectoryBlurColorDark: "#010000af",
-  $homeOutlineColorTrans: "#d3d3d398",
-  $homeOutlineColor: "#d3d3d3",
-  $homeBodyColor: "#E5D6CB",
-  $homePlaceholderColor: "#3c3c4344",
-  $oddColor: "#D1C3B9",
-  $homeSeparatorColor: "#D9CABF",
-  $accentColor: "#BB9D88",
-  $brightColor: "#FFFFFF",
-  $lessBrightColor: "#F3F3EE",
-  $darkAccentColor: "#08090A",
-  $lightestShadowColor: "#00000018",
-  $accentColorTrans: "#bb9d8838",
-  $hotDealAccentColor: "#2A2414",
-  $hotDealAccentColorTrans: "#2a24144a",
+	// HOME PAGE
+	$homeFadingTextColor: "#333436",
+	$homeGoldLikeColor: "#AB893B",
+	$homeDarkColor: "#000000",
+	$DirectoryCTATextColor: "#272727",
+	$DirectoryBlurColor: "#d4d4d4a8",
+	$DirectoryBlurColorDark: "#010000af",
+	$homeOutlineColorTrans: "#d3d3d398",
+	$homeOutlineColor: "#d3d3d3",
+	$homeBodyColor: "#E5D6CB",
+	$homePlaceholderColor: "#3c3c4344",
+	$oddColor: "#D1C3B9",
+	$homeSeparatorColor: "#D9CABF",
+	$accentColor: "#BB9D88",
+	$brightColor: "#FFFFFF",
+	$lessBrightColor: "#F3F3EE",
+	$darkAccentColor: "#08090A",
+	$lightestShadowColor: "#00000018",
+	$accentColorTrans: "#bb9d8838",
+	$hotDealAccentColor: "#2A2414",
+	$hotDealAccentColorTrans: "#2a24144a",
 
-  // SHOP PAGE
-  $shopSideTabListColor: "#626262",
-  $shopSideTabTitleColor: "#000000a2",
-  $redTextColor: "#FC2222",
-  $shopSizeChipColor: "#967E6D",
+	// SHOP PAGE
+	$shopSideTabListColor: "#626262",
+	$shopSideTabTitleColor: "#000000a2",
+	$redTextColor: "#FC2222",
+	$greenTextColor: "#0080007f",
+	$blueTextColor: "#0073ff",
+	$shopSizeChipColor: "#967E6D",
 
-  // SINGLE PRODUCTS PAGE
+	// SINGLE PRODUCTS PAGE
 
-  $singleProductMainTextColor: "#C5C5C7",
+	$singleProductMainTextColor: "#C5C5C7",
 
-  // CHECKOUT PAGE
-  $checkoutConnectorColor: "#E3DBD2",
+	// CHECKOUT PAGE
+	$checkoutConnectorColor: "#E3DBD2",
 
-  // BLOG PAGE
+	// BLOG PAGE
 
-  // CONTACT PAGE
+	// CONTACT PAGE
 
-  // SHOPPING CART PAGE
+	// SHOPPING CART PAGE
 
-  // AUTH PAGE
-  $authInactiveTextColor: "#B4B4B4",
-  $authFormColor: "#4D4D4D",
+	// AUTH PAGE
+	$authInactiveTextColor: "#B4B4B4",
+	$authFormColor: "#4D4D4D",
 };
 
 const darkTheme = {};

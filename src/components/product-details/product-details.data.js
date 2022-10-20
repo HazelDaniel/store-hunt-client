@@ -15,6 +15,16 @@ export const PRODUCT_DETAILS = {
 		url: `IMAGES/shop-details/product-big.png`,
 		variants: [{ url: `IMAGES/shop-details/thumb-1.png` }, { url: `IMAGES/shop-details/thumb-2.png` }, { url: `IMAGES/shop-details/thumb-3.png` }],
 	},
+	colors: {
+		list: [
+			{ id: `d6dbde`, isActive: false },
+			{ id: `b49d7e`, isActive: false },
+			{ id: `000000`, isActive: false },
+		],
+		isVisual: true,
+		isColorList: true,
+		className: `product-color-list`,
+	},
 	description: `The most common argument against this is that a key factor of the comprehensive methods has become even more significant for The Rule of Vacant Deception (Andres Guerra in The
 						Book of the Ground-Breaking Technology) On top of that the basic layout for the main source of the potential role models gives rise to any known or incorporative approach.
 						Furthermore, one should not forget that components of efforts of the formal review of opportunities has proved to be reliable in the scope of the general features and

@@ -6,7 +6,8 @@ const _makeVisualList = css`
 	flex-wrap: row;
 	flex-basis: 2rem;
 `;
-const _computeListColor = ({ $listId }) => {
+export const _computeListColor = ({ $listId }) => {
+	console.log($listId)
 	if (!$listId) return;
 	return css`
 		&#${$listId} {
@@ -140,11 +141,15 @@ export const ShopAccordionStyled = styled.div`
 
 		&.colors-list {
 			${_makeVisualList};
+			flex-wrap: wrap;
+			
 
 			li {
-				margin: 0 1rem;
+				margin:  1rem;
 				width: 2rem;
 				height: 2rem;
+				min-height: 2rem;
+				min-width: 2rem;
 				border-radius: 50%;
 				border: 0.1rem solid ${({ theme }) => theme.$homeOutlineColor};
 			}
