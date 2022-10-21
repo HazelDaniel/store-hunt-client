@@ -2,6 +2,7 @@ import { ShopProduct } from "../shop-product/shop-product.component";
 import { ShopProductsDisplayStyled, PaginationButtonsDivStyled, ShopPaginationButtonStyled, ShopLoadMoreButtonStyled } from "./shop-products-display.styles";
 
 const SHOP_PRODUCTS_DATA = {
+	
 	products: [
 		{
 			name: `NIKE N1`,
