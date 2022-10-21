@@ -7,7 +7,7 @@ const _makeVisualList = css`
 	flex-basis: 2rem;
 `;
 export const _computeListColor = ({ $listId }) => {
-	console.log($listId)
+	// console.log($listId)
 	if (!$listId) return;
 	return css`
 		&#${$listId} {

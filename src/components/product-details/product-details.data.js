@@ -4,6 +4,8 @@ export const PRODUCT_DETAILS = {
 	quantity: 3,
 	ratings: 4,
 	isDiscounted: true,
+	isFeatured: false,
+	dateAdded: "",
 	discountedPrice: 250.0,
 	category: `Men`,
 	title: `Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening

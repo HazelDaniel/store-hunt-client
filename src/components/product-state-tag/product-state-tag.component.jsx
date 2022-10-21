@@ -18,6 +18,10 @@ export const PRODUCT_STATE_DATA = {
 		message: "latest",
 		color: "$lightestShadowColor",
 	},
+	discounted: {
+		message: "discounted",
+		color: "$homeOutlineColor"
+	}
 };
 export const ProductStateTag = ({ message }) => {
 	const messageKey = useMemo(() => PRODUCT_STATE_DATA[message.replace(/ /g, "_")]);

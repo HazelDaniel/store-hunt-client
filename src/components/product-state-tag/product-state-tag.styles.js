@@ -1,11 +1,11 @@
 import {default as styled, css} from "styled-components";
 import { makeAbsoluteTopLefDiv, makeFullWidthBlock, makeRowFlexCenter } from "../../styles/styles";
-import { PRODUCT_STATE_DATA } from "./product-state-tag.component";
 
 
-const _computeTagColorFromState = ({ $key,theme }) => {
+
+const _computeTagColorFromState = ({ $key, theme }) => {
 	return css`
-		color: ${theme[PRODUCT_STATE_DATA[$key].color]};
+		color: ${theme[$key.color]};
 	`;
 };
 

@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 import { debug, makeAbsoluteBottomLeftDiv, makeAbsoluteTopLefDiv, makeAbsoluteTopRightDiv, makeColFlexCenter, makeColFlexStart, makeFullHeightBlock, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter, makeRowFlexEnd, makeUnSelectableTextDiv } from "../../styles/styles";
+import { _computeListColor } from "../shop-accordion/shop-accordion.styles";
+
 
 
 const _TAlignText = css`
@@ -8,6 +10,7 @@ const _TAlignText = css`
 	font-family: latoLight !important;
 	font-weight: 600;
 `;
+
 
 export const ShopProductStyled = styled.div`
 	${makeColFlexStart};
@@ -82,7 +85,7 @@ export const ShopProductStyled = styled.div`
 		align-items: flex-end;
 		position: relative;
 		height: 35%;
-
+		text-transform: capitalize;
 		&:hover {
 			.SPD-top-cta-div {
 				opacity: 1;
@@ -196,4 +199,8 @@ export const ShopProductStyled = styled.div`
 			bottom: 5%;
 		}
 	}
+`;
+
+export const ProductColorsListStyled = styled.span`
+	${_computeListColor};
 `;

@@ -62,8 +62,8 @@ function App() {
           {/* <Checkout /> */}
           {/* <Contact /> */}
           {/* <Home /> */}
-          <ProductDetails />
-          {/* <Shop /> */}
+          {/* <ProductDetails /> */}
+          <Shop />
           <Footer />
 				</>
 			</MobileNavProvider>

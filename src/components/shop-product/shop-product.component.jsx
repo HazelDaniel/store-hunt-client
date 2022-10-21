@@ -1,12 +1,15 @@
+import { ProductStateTag } from "../product-state-tag/product-state-tag.component";
 import { RatingDiv } from "../rating-div/rating-div.component";
-import { ShopProductStyled } from "./shop-product.styles";
+import { ProductColorsListStyled, ShopProductStyled } from "./shop-product.styles";
 
-export const ShopProduct = ({ ratings }) => {
+export const ShopProduct = ({ product }) => {
 	return (
 		<ShopProductStyled className="shop-product-div">
 			<div className="SPD-top">
+				{/* TODO: REMEMBER TO FIRST CHECK IF THE PRODUCT HAS IS-FEATURED IS-DISCOUNTED , ETC. PROPERTIES BEFORE RENDERING THE STATE TAG */}
+				<ProductStateTag message={product.quantity > 0 ? "out of stock" : "featured"} />
 				<div className="SPD-image-div">
-					<img src="IMAGES/product/product-1.jpg" alt="" />
+					<img src={product.image.url} alt="" />
 					<div className="SPD-top-cta-div">
 						<div>
 							<svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,14 +23,14 @@ export const ShopProduct = ({ ratings }) => {
 				<div className="SPD-content-cta-div">
 					+ Add to cart
 					<div className="SPD-content-colors-div">
-						<span id="C-4878FC"></span>
-						<span id="C-CD1613"></span>
-						<span id="C-2BCBD6"></span>
+						{product.colors.list.map((color) => (
+							<ProductColorsListStyled id={`C-${color.id}`} $listId={`C-${color.id}`}/>
+						))}
 					</div>
 				</div>
-				<RatingDiv ratings={ratings} />
-				<p className="SPDC-name">Tennis X</p>
-				<p className="SPDC-price">$67.24</p>
+				<RatingDiv ratings={product.ratings} />
+				<p className="SPDC-name">{product.name}</p>
+				<p className="SPDC-price">${product.price.toFixed(2)}</p>
 			</div>
 		</ShopProductStyled>
 	);
