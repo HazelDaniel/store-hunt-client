@@ -170,10 +170,12 @@ export const CheckoutStyled = styled.section`
 							outline: none;
 							border: unset;
 						}
-
+						
 						input {
 							${makeFullHeightBlock};
-
+							z-index: 3;
+							color: #000000;
+							
 							&::selection {
 								background-color: ${({ theme }) => theme.$darkAccentColor};
 								color: ${({ theme }) => theme.$lessBrightColor};
@@ -317,6 +319,7 @@ export const CheckoutStyled = styled.section`
 		color: ${({ theme }) => theme.$darkAccentColor};
 		background-color: ${({ theme }) => theme.$lessBrightColor};
 		position: relative;
+		/* display: none; */
 
 		@media screen and (min-width: 900px) {
 			min-width: 35rem;
@@ -387,6 +390,7 @@ export const CheckoutStyled = styled.section`
 				background-color: unset;
 				font-size: 0.8rem;
 				font-family: latoLight;
+				color: ${({ theme }) => theme.$darkAccentColor};
 			}
 		}
 
@@ -404,6 +408,7 @@ export const CheckoutStyled = styled.section`
 
 		form {
 			${_customForm};
+			display: none;
 
 			.AHA-div {
 				${makeRowFlexStart}
@@ -434,6 +439,7 @@ export const CheckoutStyled = styled.section`
 					width: max-content;
 					border: none;
 					background-color: transparent;
+					color: ${({ theme }) => theme.$darkAccentColor};
 
 					~ span {
 						${makeAbsoluteBottomRightDiv};
@@ -464,7 +470,7 @@ export const CheckoutStyled = styled.section`
 			padding: 0 0.5rem;
 			${makeFullWidthBlock};
 			height: max-content;
-			display: none;
+			/* display: none; */
 			padding: 2rem 5rem 10rem 0.5rem;
 			* {
 				font-family: nunito;
@@ -514,12 +520,13 @@ export const CheckoutStyled = styled.section`
 					outline: none;
 					border: unset;
 					padding: 0.5rem 1rem;
+					color: ${({ theme }) => theme.$whiteBGInputTextColor};
+
 					&::placeholder {
 						text-transform: capitalize;
 						font-family: nunitoLight;
 						color: ${({ theme }) => theme.$singleProductMainTextColor};
 					}
-					color: ${({ theme }) => theme.$darkAccentColor};
 				}
 				& > input {
 					width: max-content;

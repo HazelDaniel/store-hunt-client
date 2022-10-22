@@ -47,9 +47,6 @@ export const MobileNavTab = () => {
 			<MobileNavDivsStyled >
 				<SideTabTitleLinkDivStyled>
 					<p className="ST-title-link">SHOP</p>
-					<svg className="ST-accordion-toggle" viewBox="0 0 45 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<rect width="45" height="8" rx="4" />
-					</svg>
 				</SideTabTitleLinkDivStyled>
 				<MobileNavLinksStyled>
 					<li className="ST-link">SHOPPING CART</li>

@@ -272,5 +272,8 @@ export const GlobalCSS = createGlobalStyle`
         overflow: auto !important;
         width: 100vw;
     }
-    
+    input{
+      caret-color: ${({ theme }) => theme.$darkAccentColor};
+      color: ${({ theme }) => theme.$darkAccentColor};
+    }
 `;

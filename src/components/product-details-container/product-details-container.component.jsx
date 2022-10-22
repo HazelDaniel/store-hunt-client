@@ -12,7 +12,7 @@ export const ProductDetailsContainer = ({ product }) => {
 					<p className="product-name">{product.name}</p>
 					<div className="products-ratings-div">
 						<span>Reviews</span>
-						<RatingDiv ratings={4} />
+						<RatingDiv ratings={product.ratings} />
 					</div>
 					<div className="product-price-div">
 						<p className="product-price">${product.discountedPrice.toFixed(2)}</p>

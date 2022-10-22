@@ -78,6 +78,9 @@ export const MobileNavLinksStyled = styled.ul`
 	position: relative;
 	padding: 0 3rem;
 	width: 100%;
+	li{
+		margin-left: 25%;
+	}
 
 	.ST-link {
 		font-family: openSansLight;
@@ -102,6 +105,7 @@ export const SideTabTitleLinkDivStyled = styled.div`
 	svg {
 		width: 2rem !important;
 		fill: ${({ theme }) => theme.$lessBrightColor};
+		cursor: pointer;
 
 		path {
 			fill: ${({ theme }) => theme.$lessBrightColor};

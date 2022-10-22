@@ -1,6 +1,6 @@
 import { ShopProduct } from "../shop-product/shop-product.component"
 import { RelatedProductsStyled } from "./related-products.styles"
-
+import { PRODUCT_DETAILS } from "../product-details/product-details.data"
 
 
 
@@ -24,10 +24,10 @@ export const RelatedProducts = () => {
 
 			</div>
 			<div className="related-products-wrapper">
-				<ShopProduct />
-				<ShopProduct />
-				<ShopProduct />
-				<ShopProduct />
+				<ShopProduct product={PRODUCT_DETAILS} />
+				<ShopProduct product={PRODUCT_DETAILS} />
+				<ShopProduct product={PRODUCT_DETAILS} />
+				<ShopProduct product={PRODUCT_DETAILS} />
 			</div>
 			<div className="RPW-carousel-control right">
 				<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

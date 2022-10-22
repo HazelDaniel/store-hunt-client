@@ -125,8 +125,8 @@ export const HotSalesStyled = styled.section`
 				}
 
 				to {
-					color: ${({ theme }) => theme.$brightColor};
-					border: 0.15rem solid ${({ theme }) => theme.$brightColor};
+					color: #ffffff;
+					border: 0.15rem solid #ffffff;
 				}
 			}
 		}

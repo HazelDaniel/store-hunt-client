@@ -17,7 +17,7 @@ export const DesktopSideTabStyled = styled.div`
 	border-bottom-left-radius: 1.5rem;
 	align-items: center;
 	padding: 2rem 0.5rem;
-	background-color: ${({ theme }) => theme.$brightColor};
+	background-color: ${({ theme }) => theme.$desktopSideTabColor};
 	box-shadow: -0.05rem -0.1rem 0.5rem ${({ theme }) => theme.$DirectoryBlurColorDark};
 	overflow: visible;
 
@@ -55,13 +55,13 @@ export const DesktopSideTabStyled = styled.div`
 
 		svg {
 			${makeFullWidthBlock};
-			fill: ${({ theme }) => theme.$DirectoryBlurColorDark};
+			fill: ${({ theme }) => theme.$desktopSideTabIconColor};
 			transform: scale(0.9);
 			cursor: pointer;
 			width: 100% !;
 
 			path {
-				fill: ${({ theme }) => theme.$DirectoryBlurColorDark};
+				fill: ${({ theme }) => theme.$desktopSideTabIconColor};
 			}
 		}
 	}

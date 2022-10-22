@@ -16,7 +16,6 @@ export const CustomSelect = () => {
 				<option
 					value="none"
 					onClick={() => {
-						console.log("this.value");
 					}}
 				>
 					None

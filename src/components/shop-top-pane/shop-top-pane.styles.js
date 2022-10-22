@@ -48,16 +48,19 @@ export const ShopTopPaneStyled = styled.div`
 				font-family: openSansLight;
 				font-size: 0.9rem;
 			}
-			
+
 			.shop-nav-label-divide {
 				height: 0.7rem;
 				overflow: hidden;
 				${makeRowFlexCenter};
 				align-items: center;
 				display: inline-flex;
-				margin: 0 .5rem;
+				margin: 0 0.5rem;
 				svg {
 					height: 100%;
+					path {
+						fill: ${({ theme }) => theme.$darkAccentColor};
+					}
 				}
 			}
 
@@ -72,7 +75,7 @@ export const ShopTopPaneStyled = styled.div`
 	.shop-cart-total-div {
 		margin-right: 4vw;
 		${makeRowFlexStart};
-		
+
 		.shop-bag-icon-div {
 			height: 2rem;
 			${makeColFlexCenter};
@@ -82,7 +85,7 @@ export const ShopTopPaneStyled = styled.div`
 
 			svg {
 				height: 80%;
-				transform: scale(.9);
+				transform: scale(0.9);
 			}
 
 			span {

@@ -77,6 +77,7 @@ export const CartStyled = styled.div`
 		outline: unset;
 		border: unset;
 		cursor: pointer;
+		color: ${({ theme }) => theme.$darkAccentColor};
 	}
 
 	.cart-total-price-wrapper {
@@ -106,8 +107,8 @@ export const CartStyled = styled.div`
 
 		button {
 			background-color: ${({ theme }) => theme.$darkAccentColor};
-			color: ${({ theme }) => theme.$lessBrightColor};
 			font-family: latoLight;
+			color: ${({ theme }) => theme.$lessBrightColor};
 		}
 	}
 
@@ -160,8 +161,6 @@ export const CartStyled = styled.div`
 			align-items: center;
 			padding-bottom: 12rem;
 			border-bottom: 0.3rem solid ${({ theme }) => theme.$accentColor};
-
-			
 		}
 
 		.cart-cta-div {

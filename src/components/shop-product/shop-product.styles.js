@@ -33,8 +33,7 @@ export const ShopProductStyled = styled.div`
 		${makeColFlexCenter};
 		position: relative;
 		height: 65%;
-
-		
+		background-color: ${({ theme }) => theme.$lessBrightColor};
 
 		.SPD-image-div {
 			${makeFullSizeBlock};

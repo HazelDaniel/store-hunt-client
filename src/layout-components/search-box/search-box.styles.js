@@ -32,26 +32,27 @@ export const SearchBoxStyled = styled.div`
   }
 `;
 export const SearchInputStyled = styled.input`
-  padding: 0 1rem;
-  width: 75%;
-  all: unset;
-  caret-color: ${({ theme }) => theme.$homeGoldLikeColor};
-  overflow: hidden;
+	padding: 0 1rem;
+	width: 75%;
+	all: unset;
+	caret-color: ${({ theme }) => theme.$homeGoldLikeColor};
+	overflow: hidden;
+	color: ${({ theme }) => theme.$lessBrightColor};
 
-  &::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-  }
+	&::-webkit-search-cancel-button {
+		-webkit-appearance: none;
+	}
 
-  &:focus ~ .search-cancel {
-    display: block;
-    ${makeAbsoluteTopRightDiv};
-    right: -10%;
-    height: 100%;
-    width: 2rem;
+	&:focus ~ .search-cancel {
+		display: block;
+		${makeAbsoluteTopRightDiv};
+		right: -10%;
+		height: 100%;
+		width: 2rem;
 
-    svg {
-      width: 100%;
-      transform: scale(0.6);
-    }
-  }
+		svg {
+			width: 100%;
+			transform: scale(0.6);
+		}
+	}
 `;

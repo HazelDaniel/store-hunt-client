@@ -61,9 +61,9 @@ function App() {
           {/* <Cart /> */}
           {/* <Checkout /> */}
           {/* <Contact /> */}
-          {/* <Home /> */}
+          <Home />
           {/* <ProductDetails /> */}
-          <Shop />
+          {/* <Shop /> */}
           <Footer />
 				</>
 			</MobileNavProvider>

@@ -70,14 +70,14 @@ export const AuthStyled = styled.div`
 
 				&.active {
 					transform: scale(1);
-					color: ${({ theme }) => theme.$brightColor};
+					color: ${({ theme }) => theme.$authActiveTextColor};
 
 					&::after {
 						${makeAbsoluteBottomRightDiv};
 						width: 65%;
 						height: 0.25rem;
 						border-radius: 4rem;
-						background-color: ${({ theme }) => theme.$brightColor};
+						background-color: ${({ theme }) => theme.$authActiveTextColor};
 						bottom: -0.5rem;
 					}
 				}

@@ -64,7 +64,7 @@ export const BlogHeroStyled = styled.section`
 
 			&.primary {
 				transform: translateY(-0.5rem);
-				color: ${({ theme }) => theme.$brightColor};
+				color: ${({ theme }) => theme.$blogHeroPrimaryTextColor};
 				animation-name: textSlideDown;
 				${_useTextAnimationTime};
 				@keyframes textSlideDown {
@@ -79,13 +79,13 @@ export const BlogHeroStyled = styled.section`
 
 			&.secondary {
 				transform: translateY(0.5rem);
-				color: ${({ theme }) => theme.$homeGoldLikeColor};
+				color: ${({ theme }) => theme.$blogHeroSecondaryTextColor};
 				animation-name: textSlideUp;
 				${_useTextAnimationTime};
 				animation-direction: alternate;
-				animation-timing-function: cubic-bezier(0,.9,1);
+				animation-timing-function: cubic-bezier(0, 0.9, 1);
 				animation-fill-mode: backwards;
-				animation-delay: .5s;
+				animation-delay: 0.5s;
 				@keyframes textSlideUp {
 					from {
 						visibility: hidden;
@@ -102,7 +102,7 @@ export const BlogHeroStyled = styled.section`
 		.blog-hero-text-divide {
 			${makeFullHeightBlock};
 			width: 0.2rem;
-			background-color: ${({ theme }) => theme.$brightColor};
+			background-color: ${({ theme }) => theme.$blogHeroPrimaryTextColor};
 			margin: 0 0.4rem;
 			position: relative;
 			transform-origin: center;
@@ -167,6 +167,7 @@ export const BlogBodyStyled = styled.section`
 			font-size: 1.2rem;
 			border: 0.1rem solid ${({ theme }) => theme.$darkAccentColor};
 			text-transform: uppercase;
+			color: ${({ theme }) => theme.$darkAccentColor};
 			${makeRowFlexStart};
 			align-items: center;
 			transform: scale(0.8);

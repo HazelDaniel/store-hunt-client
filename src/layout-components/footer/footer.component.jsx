@@ -20,7 +20,7 @@ export const Footer = () => {
 						<li>COLLECTIONS</li>
 						<li>SUBSCRIBE</li>
 						<li>BLOG</li>
-						<li>ABOUT US</li>
+						<li>CONTACT US</li>
 					</ul>
 				</TopMiddleStyled>
 				<TopRIghtStyled>

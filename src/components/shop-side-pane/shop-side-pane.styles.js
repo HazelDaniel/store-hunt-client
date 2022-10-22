@@ -69,7 +69,7 @@ export const ShopSidePaneStyled = styled.div`
 	max-width: 25rem !important;
 	min-width: 20rem;
 	padding: 1.5rem 1rem 1rem 0;
-	box-shadow: 0.75rem 0 0.8rem ${({ theme }) => theme.$homeOutlineColor};
+	box-shadow: 0.75rem 0 0.8rem #010000af;
 	overflow: visible !important;
 	transition: all 0.3s ease-in-out;
 	* {
@@ -163,7 +163,7 @@ export const ShopSideTabTogglerStyled = styled.div`
 	${makeColFlexCenter};
 	border-top-right-radius: 0.5rem;
 	border-bottom-right-radius: 0.5rem;
-	box-shadow: 0.1rem 0.2rem 0.8rem ${({ theme }) => theme.$homeOutlineColor};
+	box-shadow: 0.1rem 0.2rem 0.8rem #010000af;
 	background-color: ${({ theme }) => theme.$brightColor};
 	svg {
 		transform: scaleY(0.8);
