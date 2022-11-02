@@ -18,7 +18,6 @@ export const ProductDetailsDisplay = ({productImage}) => {
 						<img src={image.url} alt="" className="PPD-image" />
 					</div>
 				))}
-				;
 			</div>
 			<div className="product-view-div">
 				<img src={images[detailsDisplayState.currentView].url} alt="" className="PVD-image" />

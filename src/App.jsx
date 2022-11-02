@@ -20,6 +20,9 @@ import { Auth } from "./components/auth/auth.component.jsx";
 import { Blog } from "./components/blog/blog.component.jsx";
 import { Contact } from "./components/contact/contact.component.jsx";
 
+
+// ROUTING
+
 function App() {
   const [themeState, themeDispatch] = useReducer(
     themeReducer,
@@ -61,9 +64,9 @@ function App() {
           {/* <Cart /> */}
           {/* <Checkout /> */}
           {/* <Contact /> */}
-          <Home />
+          {/* <Home /> */}
           {/* <ProductDetails /> */}
-          {/* <Shop /> */}
+          <Shop />
           <Footer />
 				</>
 			</MobileNavProvider>

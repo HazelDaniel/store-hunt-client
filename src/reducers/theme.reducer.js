@@ -117,7 +117,7 @@ const darkTheme = {
 };
 
 export const initialThemeState = {
-  theme: darkTheme,
+  theme: lightTheme,
   isLightTheme: true,
 };
 
