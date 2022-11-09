@@ -169,10 +169,9 @@ export const SliderStyled = styled.div`
 							height: 100%;
 							content: "";
 							background-image: inherit;
-							background-repeat: no-repeat !important;
 							background-size: cover !important;
-							background-position-x:  ${(i / 4) * 100}%;
-							background-position-x: ${i === 1 && `75%`};
+							background-position-x:  ${(i / 4) * 100}% !important;
+							background-repeat: no-repeat !important;
 							left: 0;
 							top: 0;
 							background-color: ${({ theme }) => theme.$lessBrightColor};

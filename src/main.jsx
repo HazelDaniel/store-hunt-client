@@ -1,27 +1,66 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
-import { createBrowserRouter } from "react-router-dom";
+
+import { RouterProvider,createBrowserRouter } from "react-router-dom";
 
 
-const router = createBrowserRouter([
+import { Shop } from "./components/shop/shop.component";
+import { ErrorPage } from "./components/error-page/error-page.component";
+import { Home } from "./components/home/home.component";
+import { Blog } from "./components/blog/blog.component";
+import { Auth } from "./components/auth/auth.component";
+import { Cart } from "./components/cart/cart.component";
+import { Contact } from "./components/contact/contact.component";
+import { Checkout } from "./components/checkout/checkout.component";
+import { F04 } from "./components/F04/F04.component";
+import App from "./App";
+// ROUTING
+export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
-		loader: null,
+		errorElement: <ErrorPage />,
 		children: [
 			{
-				path: "team",
-				element: <Team />,
-				loader: null,
+				path: "shop",
+				element: <Shop />,
+			},
+			{
+				path: "blog",
+				element: <Blog />,
+			},
+			{
+				path: "auth",
+				element: <Auth />,
+			},
+			{
+				path: "cart",
+				element: <Cart />,
+			},
+			{
+				path: "checkout",
+				element: <Checkout />,
+			},
+			{
+				path: "contact",
+				element: <Contact />,
+			},
+			{
+				index: true,
+				element: <Home />,
 			},
 		],
 	},
+	{
+		path: "*",
+		element: <F04 />,
+	},
 ]);
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-    <App />
-  // </React.StrictMode>
+	// <React.StrictMode>
+	<RouterProvider router={router} />
+	// </React.StrictMode>
 );

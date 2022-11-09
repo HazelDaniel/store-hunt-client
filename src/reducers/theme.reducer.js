@@ -57,6 +57,8 @@ const lightTheme = {
 	$whiteBGInputTextColor: "#3f3f3f",
 	$desktopSideTabColor: "#ffffff",
 	$desktopSideTabIconColor: "#010000af",
+	$mobileNavDisabledColor: "#d3d3d398",
+	$activeSideTabColor: "#B4B4B4",
 };
 
 const darkTheme = {
@@ -114,6 +116,8 @@ const darkTheme = {
 	$whiteBGInputTextColor: "#3f3f3f",
 	$desktopSideTabColor: "#000000",
 	$desktopSideTabIconColor: "#626262",
+	$mobileNavDisabledColor: "#8c8c8f",
+	$activeSideTabColor: "#bb9d8838",
 };
 
 export const initialThemeState = {

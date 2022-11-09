@@ -1,6 +1,9 @@
 import { SliderStyled } from "./slider.styles";
+import { decode } from "html-entities";
+import { useNavigate } from "react-router-dom";
 
 export const Slider = () => {
+	const navigate = useNavigate();
 	return (
 		<SliderStyled className="slider s--ready">
 			<div className="slider__slides">
@@ -10,9 +13,9 @@ export const Slider = () => {
 						<h2 className="slider__slide-heading">
 							<span>Fall - Winter Collections 2022</span>
 						</h2>
-						<div className="slider__slide-shop-now-cta">
+						<div className="slider__slide-shop-now-cta" onClick={() => navigate("shop")}>
 							SHOP NOW
-							<span>&RightArrow;</span>
+							<span>{ decode(`&RightArrow;`)}</span>
 						</div>
 					</div>
 					<div className="slider__slide-parts">
@@ -20,7 +23,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg.png)`,
 								}}
 							></div>
 						</div>
@@ -28,7 +31,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg.png)`,
 								}}
 							></div>
 						</div>
@@ -36,7 +39,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg.png)`,
 								}}
 							></div>
 						</div>
@@ -44,7 +47,7 @@ export const Slider = () => {
 							<div
 								className="slider__slide-part-inner"
 								style={{
-									backgroundImage: `url(IMAGES/hero-bg-mobile.svg)`,
+									backgroundImage: `url(IMAGES/hero-bg.png)`,
 								}}
 							></div>
 						</div>

@@ -161,7 +161,7 @@ export const AuthStyled = styled.div`
 				padding-left: 1rem;
 				border-radius: 0.3rem;
 				background-color: transparent;
-				border: 0.1rem solid ${({ theme }) => theme.$singleProductMainTextColor};
+				border: 0.1rem solid #c5c5c7;
 				color: ${({ theme }) => theme.$darkAccentColor};
 
 				&::placeholder {
@@ -186,7 +186,9 @@ export const AuthStyled = styled.div`
 			label {
 				display: block;
 				margin-bottom: 1rem;
-				color: ${({ theme }) => theme.$brightColor};
+				color: #ffffff;
+				font-size: 1.1rem;
+				font-family:manjariLight;
 			}
 
 			input.confirm {

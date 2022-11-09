@@ -1,18 +1,37 @@
 import { DealOfTheWeekStyled } from "./deal-of-the-week-div.styles";
+import { decode } from "html-entities";
+import { default as Countdown } from "react-countdown";
 
+// Random component
+const CountdownCompletion = () => <span>You are good to go!</span>;
+
+// Renderer callback with condition
+const renderer = ({days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a complete state
+    return <CountdownCompletion />;
+  } else {
+    // Render a countdown
+    return (
+		<>
+			<span>{String(days).padStart(2, 0)}</span>:<span>{String(hours).padStart(2, 0)}</span>:<span>{String(minutes).padStart(2, 0)}</span>:<span>{String(seconds).padStart(2, 0)}</span>
+		</>
+	);
+  }
+};
 export const DealOfTheWeek = () => {
 	return (
 		<DealOfTheWeekStyled>
 			<div className="DOW-side-tab">
 				<ul className="DOW-tab-lists">
 					<li className="DOW-tab-list">
-						<span>&rdca;</span> Clothings
+						<span>{ decode(`&rdca;`)}</span> Clothings
 					</li>
 					<li className="DOW-tab-list active-dow-tab-list">
-						<span>&rdca;</span> Bags
+						<span>{ decode(`&rdca;`)}</span> Bags
 					</li>
 					<li className="DOW-tab-list">
-						<span>&rdca;</span> Shoe Collection
+						<span>{ decode(`&rdca;`)}</span> Shoe Collection
 					</li>
 				</ul>
 			</div>
@@ -25,7 +44,6 @@ export const DealOfTheWeek = () => {
 				<button className="DOW-cta">SHOP NOW</button>
 			</div>
 			<p className="DOW-title">
-				{" "}
 				deal of the week
 				<span>
 					<svg viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +60,7 @@ export const DealOfTheWeek = () => {
 
 			<div className="DOW-time-div">
 				<div className="DOW-time-count-div">
-					<span>25</span>:<span>10</span>:<span>05</span>:<span>00</span>
+					<Countdown renderer={ renderer} date={new Date (`december 1, 2022`)} />
 				</div>
 				<div className="DOW-time-count-label-div">
 					<span>Days</span>

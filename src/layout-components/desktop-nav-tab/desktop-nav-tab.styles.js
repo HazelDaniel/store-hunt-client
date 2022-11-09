@@ -25,5 +25,11 @@ export const DesktopNavLinkStyled = styled.li`
 		font-family: openSansLight, sans-serif;
 		font-weight: 300;
 		color: ${({ theme }) => theme.$lessBrightColor};
+		&.active {
+			background-color: ${({ theme }) => theme.$brightColor};
+			color: ${({ theme }) => theme.$darkAccentColor};
+			padding: .5rem;
+			border-bottom-right-radius: 2rem;
+		}
 	}
 `;
