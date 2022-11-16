@@ -1,3 +1,4 @@
+
 import { ThemeProvider } from "styled-components";
 import { GlobalCSS } from "./styles/styles.js";
 import { initialThemeState, themeReducer } from "./reducers/theme.reducer.js";
@@ -8,21 +9,16 @@ import { MobileNavProvider } from "./contexts/mobile-nav-context.js";
 import { initialMobileNavState, mobileNavReducer } from "./reducers/mobile-nav-reducer.js";
 import { DesktopSideTab } from "./layout-components/desktop-side-tab/desktop-side-tab.component.jsx";
 import { Footer } from "./layout-components/footer/footer.component.jsx";
-import { Home } from "./components/home/home.component.jsx";
-import { Shop } from "./components/shop/shop.component.jsx";
-import { ProductDetails } from "./components/product-details/product-details.component.jsx";
-import { Cart } from "./components/cart/cart.component.jsx";
-import { Checkout } from "./components/checkout/checkout.component.jsx";
-import { Auth } from "./components/auth/auth.component.jsx";
-import { Blog } from "./components/blog/blog.component.jsx";
-import { Contact } from "./components/contact/contact.component.jsx";
+
 
 // ROUTING
-import { Outlet } from "react-router-dom";
+import { Outlet,useNavigation } from "react-router-dom";
+import { Loader } from "./components/loader/loader.component.jsx";
 
 export function App() {
 	const [themeState, themeDispatch] = useReducer(themeReducer, initialThemeState, (state) => state);
 	const [mobileNavState, mobileNavDispatch] = useReducer(mobileNavReducer, initialMobileNavState, (state) => state);
+	const navigation = useNavigation();
 
 	const mobileNavValue = useMemo(
 		() => ({
@@ -46,16 +42,10 @@ export function App() {
 			<MobileNavProvider value={mobileNavValue}>
 				<>
 					<UpperPane />
+					{/* {console.log(useNavigation().state)}
+					<Loader /> */}
 					<ModalOverlay themeDispatch={themeValue.themeDispatch} />
-          <DesktopSideTab themeDispatch={ themeValue.themeDispatch} />
-					{/* <Auth /> */}
-					{/* <Blog /> */}
-					{/* <Cart /> */}
-					{/* <Checkout /> */}
-					{/* <Contact /> */}
-					{/* <Home /> */}
-					{/* <ProductDetails /> */}
-					{/* <Shop /> */}
+          <DesktopSideTab themeDispatch={ themeValue.themeDispatch} />					{/* <Shop /> */}
 					<Outlet />
 					<Footer />
 				</>

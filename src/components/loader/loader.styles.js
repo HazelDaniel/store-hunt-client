@@ -1,65 +1,63 @@
 import { default as styled, css } from "styled-components";
 
-const _styledLoaderSpan = css`
+import { debug, makeAbsoluteBottomDiv, makeColFlexCenter, makeColFlexEnd, makeRowFlexCenter } from "../../styles/styles";
+const _preserve3d = css`
+	transform-style: preserve-3d;
+`;
+export const LoaderOverlayStyled = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 6;
+	width: 100vw;
+	height: 100vh;
+	background-color: ${({ theme }) => theme.$darkAccentColor};
+	backdrop-filter: blur(0.3rem);
+	${makeColFlexCenter};
+	font-size: calc(12px + (24 - 12) * (100vw - 320px) / (2560 - 320));
+`;
+export const LoaderTextStyled = styled.div`
+	text-align: center;
 	position: relative;
-	top: 0.63em;
-	display: inline-block;
-	text-transform: uppercase;
-	opacity: 0;
-	transform: rotateX(-90deg);
+	overflow: visible;
+	width: 13rem;
+	height: 3rem;
+	padding-top: 1rem;
+	font-size: 1.5;
+	background: ${({ theme }) => theme.$accentColor};
+	font-family: manjariMedium;
+	font-weight: 800;
+	color: ${({ theme }) => theme.$brightColor};
+	span {
+		display: inline-flex;
+		background-color: ${({ theme }) => theme.$darkAccentColor};
+		color: ${({ theme }) => theme.$brightColor};
+		margin-left: -.2rem;
+		padding: .2rem;
+	}
 `;
 
-export const LoaderSpanStyled = styled.span`
-	${_styledLoaderSpan};
-	&.let1 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.2s;
-	}
-	&.let2 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.3s;
-	}
-	&.let3 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.4s;
-	}
-	&.let4 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.5s;
-	}
-	&.let5 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.6s;
-	}
-	&.let6 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.7s;
-	}
-	&.let7 {
-		animation: drop 1.2s ease-in-out infinite;
-		animation-delay: 1.8s;
-	}
+export const LoaderUnderlineStyled = styled.div`
+	height: 0.4rem;
+	width: 100%;
+	background: linear-gradient(${({ theme }) => theme.$accentColor} 0 0), linear-gradient(${({ theme }) => theme.$darkAccentColor} 0 0), ${({ theme }) => theme.$brightColor};
+	background-size: 60% 100%;
+	background-repeat: no-repeat;
+	animation: p6 3s infinite;
+	animation-direction: alternate;
+	${makeAbsoluteBottomDiv};
+	bottom: -0.4rem;
+	left: 0;
 
-	@keyframes drop {
-		10% {
-			opacity: 0.5;
+	@keyframes p6 {
+		0% {
+			background-position: -150% 0, -150% 0;
 		}
-		20% {
-			opacity: 1;
-			top: 3.78em;
-			transform: rotateX(-360deg);
-		}
-		80% {
-			opacity: 1;
-			top: 3.78em;
-			transform: rotateX(-360deg);
-		}
-		90% {
-			opacity: 0.5;
+		66% {
+			background-position: 250% 0, -150% 0;
 		}
 		100% {
-			opacity: 0;
-			top: 6.94em;
+			background-position: 250% 0, 250% 0;
 		}
 	}
 `;
