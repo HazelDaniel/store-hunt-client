@@ -60,3 +60,4 @@ export const Cart = () => {
 		</Wrapper>
 	)
 };
+export default Cart;

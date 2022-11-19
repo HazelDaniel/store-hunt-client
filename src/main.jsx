@@ -1,20 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import { lazy } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { RouterProvider,createBrowserRouter } from "react-router-dom";
 
-
-import { Shop } from "./components/shop/shop.component";
-import { ErrorPage } from "./components/error-page/error-page.component";
-import { Home } from "./components/home/home.component";
-import { Blog } from "./components/blog/blog.component";
-import { Auth } from "./components/auth/auth.component";
-import { Cart } from "./components/cart/cart.component";
-import { Contact } from "./components/contact/contact.component";
-import { Checkout } from "./components/checkout/checkout.component";
-import { F04 } from "./components/F04/F04.component";
 import App from "./App";
+import F04 from "./components/F04/F04.component";
+import Home from "./components/home/home.component";
+import { SuspenseWrapper } from "./HOCs/suspense-wrapper.component";
+const ErrorPage = lazy(() => import("./components/error-page/error-page.component"));
+
 // ROUTING
 export const router = createBrowserRouter([
 	{
@@ -24,27 +20,31 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				path: "shop",
-				element: <Shop />,
+				element: <SuspenseWrapper path={"shop"} />,
 			},
 			{
 				path: "blog",
-				element: <Blog />,
+				element: <SuspenseWrapper path={"blog"} />,
 			},
 			{
 				path: "auth",
-				element: <Auth />,
+				element: <SuspenseWrapper path={"auth"} />,
 			},
 			{
 				path: "cart",
-				element: <Cart />,
+				element: <SuspenseWrapper path={"cart"} />,
 			},
 			{
 				path: "checkout",
-				element: <Checkout />,
+				element: <SuspenseWrapper path={"checkout"} />,
 			},
 			{
 				path: "contact",
-				element: <Contact />,
+				element: <SuspenseWrapper path={"contact"} />,
+			},
+			{
+				path: "product-details",
+				element: <SuspenseWrapper path={"product-details"} />,
 			},
 			{
 				index: true,
@@ -58,9 +58,8 @@ export const router = createBrowserRouter([
 	},
 ]);
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
 	// <React.StrictMode>
-	<RouterProvider router={router} />
+		<RouterProvider router={router} />
 	// </React.StrictMode>
 );

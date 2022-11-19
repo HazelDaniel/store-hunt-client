@@ -5,3 +5,4 @@ export const ErrorPage = () => {
 	console.log(error);
 	return <div>{error.statusText || error.message}</div>;
 };
+export default ErrorPage;

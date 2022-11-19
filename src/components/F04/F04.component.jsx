@@ -10,3 +10,4 @@ export const F04 = () => {
 		{redirect && <Navigate to="/" replace={true} /> }
 	</div>;
 };
+export default F04;

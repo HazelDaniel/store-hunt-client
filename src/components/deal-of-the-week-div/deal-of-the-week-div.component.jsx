@@ -2,6 +2,9 @@ import { DealOfTheWeekStyled } from "./deal-of-the-week-div.styles";
 import { decode } from "html-entities";
 import { default as Countdown } from "react-countdown";
 
+//ROUTING
+import { useNavigate } from "react-router-dom";
+
 // Random component
 const CountdownCompletion = () => <span>You are good to go!</span>;
 
@@ -20,6 +23,7 @@ const renderer = ({days, hours, minutes, seconds, completed }) => {
   }
 };
 export const DealOfTheWeek = () => {
+	const navigate = useNavigate();
 	return (
 		<DealOfTheWeekStyled>
 			<div className="DOW-side-tab">
@@ -41,7 +45,7 @@ export const DealOfTheWeek = () => {
 					<p>Sale Of</p>
 					<p>$150.20</p>
 				</span>
-				<button className="DOW-cta">SHOP NOW</button>
+				<button className="DOW-cta" onClick={()=>navigate("shop")}>SHOP NOW</button>
 			</div>
 			<p className="DOW-title">
 				deal of the week

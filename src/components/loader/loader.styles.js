@@ -1,14 +1,12 @@
 import { default as styled, css } from "styled-components";
 
 import { debug, makeAbsoluteBottomDiv, makeColFlexCenter, makeColFlexEnd, makeRowFlexCenter } from "../../styles/styles";
-const _preserve3d = css`
-	transform-style: preserve-3d;
-`;
+
 export const LoaderOverlayStyled = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 6;
+	z-index: 7;
 	width: 100vw;
 	height: 100vh;
 	background-color: ${({ theme }) => theme.$darkAccentColor};
@@ -22,18 +20,24 @@ export const LoaderTextStyled = styled.div`
 	overflow: visible;
 	width: 13rem;
 	height: 3rem;
-	padding-top: 1rem;
+	padding-top: 1.1rem;
 	font-size: 1.5;
 	background: ${({ theme }) => theme.$accentColor};
 	font-family: manjariMedium;
 	font-weight: 800;
-	color: ${({ theme }) => theme.$brightColor};
+	color: ${({ theme }) => theme.$darkAccentColor};
+	${makeRowFlexCenter};
 	span {
+		font-family: manjariMedium;
+		${makeColFlexCenter};
+		align-items: flex-start;
 		display: inline-flex;
 		background-color: ${({ theme }) => theme.$darkAccentColor};
 		color: ${({ theme }) => theme.$brightColor};
 		margin-left: -.2rem;
-		padding: .2rem;
+		width: 50%;
+		height: 120%;
+		
 	}
 `;
 

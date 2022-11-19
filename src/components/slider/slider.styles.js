@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import {
 	debug,
 	makeAbsoluteBottomLeftDiv,
@@ -36,6 +36,14 @@ export const SliderStyled = styled.div`
 			transition-delay: 1s * 0.65;
 			opacity: 1;
 			transform: translateY(0);
+		}
+	}
+	@keyframes slidePartIn {
+		from {
+			transform: translateX(100vw);
+		}
+		to {
+			transform: translateX(0);
 		}
 	}
 
@@ -128,6 +136,21 @@ export const SliderStyled = styled.div`
 			top: 10%;
 			height: max-content !important;
 			overflow: visible !important;
+			
+			animation-name: slideInFromLeft;
+			animation-duration: 2s;
+			animation-delay: .2s;
+			animation-timing-function: cubic-bezier(0.075,  0.165, 1);
+			animation-iteration-count: 1;
+			@keyframes slideInFromLeft {
+				from{
+					transform: translateX(-100%);
+				}
+				to{
+					transform: translateX(0);
+
+				}
+			}
 		}
 
 		@mixin subTextsActiveSlide {
@@ -163,6 +186,11 @@ export const SliderStyled = styled.div`
 						background-repeat: no-repeat !important;
 						
 						&::before {
+							animation-name: slidePartIn;
+							animation-timing-function: ease-in-out;
+							animation-duration: 1.618s;
+							animation-iteration-count: 1;
+							animation-delay:  ${0.2 * i}s;
 							display: block;
 							position: absolute;
 							width: 100%;
@@ -208,7 +236,6 @@ export const SliderStyled = styled.div`
 				background-size: 0 0;
 				background-repeat: no-repeat;
 				transition: transform 1s/2 ease-in-out;
-
 			}
 		}
 	}
@@ -326,6 +353,11 @@ export const SliderStyled = styled.div`
 		${makeAbsoluteBottomRightDiv};
 		right: 10%;
 		overflow: visible !important;
+		animation-name: slidePartIn;
+		animation-timing-function: ease-in-out;
+		animation-duration: 1.618s;
+		animation-iteration-count: 1;
+		animation-delay: 0.8s;
 
 		.slider-hero-image-circle {
 			${makeAbsoluteBottomLeftDiv};

@@ -145,7 +145,7 @@ const toggleTheme = (state) => {
     ...state,
     ...toggledThemeObject(state),
   };
-  // sessionStorage.setItem("themes", JSON.stringify(newTheme));
+  localStorage.setItem("themes", JSON.stringify(newTheme));
   return newTheme;
 };
 export const themeReducer = (state = initialThemeState, action) => {

@@ -1,4 +1,3 @@
-
 import { ThemeProvider } from "styled-components";
 import { GlobalCSS } from "./styles/styles.js";
 import { initialThemeState, themeReducer } from "./reducers/theme.reducer.js";
@@ -10,13 +9,20 @@ import { initialMobileNavState, mobileNavReducer } from "./reducers/mobile-nav-r
 import { DesktopSideTab } from "./layout-components/desktop-side-tab/desktop-side-tab.component.jsx";
 import { Footer } from "./layout-components/footer/footer.component.jsx";
 
-
 // ROUTING
-import { Outlet,useNavigation } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import { Loader } from "./components/loader/loader.component.jsx";
-
+import { ScrollRestoration } from "react-router-dom";
+const initialThemeChecked = () => {
+	if (JSON.parse(localStorage.getItem("themes"))) {
+		return JSON.parse(localStorage.getItem("themes"));
+	} else {
+		return initialThemeState;
+	}
+};
 export function App() {
-	const [themeState, themeDispatch] = useReducer(themeReducer, initialThemeState, (state) => state);
+	const initialThemeStateCheckedMemo = useMemo(() => initialThemeChecked(), []);
+	const [themeState, themeDispatch] = useReducer(themeReducer, initialThemeStateCheckedMemo, (state) => state);
 	const [mobileNavState, mobileNavDispatch] = useReducer(mobileNavReducer, initialMobileNavState, (state) => state);
 	const navigation = useNavigation();
 
@@ -41,11 +47,21 @@ export function App() {
 			<GlobalCSS />
 			<MobileNavProvider value={mobileNavValue}>
 				<>
+					<ScrollRestoration
+						getKey={(location) => {
+							const paths = ["/blog","/auth"];
+							return paths.includes(location.pathname)
+								? // home and notifications restore by pathname
+								  location.pathname
+								: // everything else by location like the browser
+								  location.key;
+						}}
+					/>
 					<UpperPane />
-					{/* {console.log(useNavigation().state)}
+					{/* {console.log(navigation.state)}
 					<Loader /> */}
 					<ModalOverlay themeDispatch={themeValue.themeDispatch} />
-          <DesktopSideTab themeDispatch={ themeValue.themeDispatch} />					{/* <Shop /> */}
+					<DesktopSideTab themeDispatch={themeValue.themeDispatch} /> {/* <Shop /> */}
 					<Outlet />
 					<Footer />
 				</>

@@ -17,3 +17,4 @@ export const Shop = () => {
 		</Wrapper>
 	)
 }
+export default Shop;

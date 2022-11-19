@@ -157,3 +157,4 @@ export const Checkout = () => {
 		</Wrapper>
 	);
 };
+export default Checkout;

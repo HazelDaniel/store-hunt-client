@@ -2,6 +2,17 @@ import { SliderStyled } from "./slider.styles";
 import { decode } from "html-entities";
 import { useNavigate } from "react-router-dom";
 
+
+//TODO: use intersection observer to animate the slider on scroll
+{/* <InView onChange={setInView}>
+	{({ ref, inView }) => (
+		<Wrapper ref={ref}>
+			<h2>Element is inside the viewport: {inView.toString()}</h2>
+		</Wrapper>
+	)}
+</InView>; */}
+
+
 export const Slider = () => {
 	const navigate = useNavigate();
 	return (
