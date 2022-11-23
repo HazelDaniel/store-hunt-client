@@ -73,55 +73,6 @@ export const NewsletterStyled = styled.section`
 		text-align: center;
 	}
 
-	form {
-		width: max-content;
-		margin: 3rem auto;
-		position: relative;
-		height: max-content;
-		${makeRowFlexStart};
-
-		input {
-			all: unset;
-			height: 2rem;
-			padding-bottom: 1rem;
-			background-color: ${({ theme }) => theme.$brightColor};
-			caret-color: ${({ theme }) => theme.$homeGoldLikeColor};
-			padding-left: 0.5rem;
-			margin-left: 0.5rem;
-
-			&:last-of-type {
-				position: relative;
-			}
-
-			&::placeholder {
-				font-size: 0.8rem;
-				color: ${({ theme }) => theme.$homeOutlineColor};
-				padding-left: 0.5rem;
-			}
-
-			&:focus {
-				box-shadow: 0.1rem 0.2rem 1rem ${({ theme }) => theme.$lightestShadowColor};
-			}
-		}
-
-		.send-news-letter-cta {
-			width: 3.5rem;
-			${makeColFlexCenter};
-			display: inline-flex;
-			height: 3rem;
-			transform-origin: bottom;
-			background-color: ${({ theme }) => theme.$darkAccentColor};
-
-			svg {
-				${makeFullHeightBlock};
-
-				path {
-					fill: ${({ theme }) => theme.$brightColor};
-				}
-			}
-		}
-	}
-
 	.newsletter-contact-div {
 		width: 75%;
 		height: fit-content;
@@ -168,5 +119,237 @@ export const NewsletterStyled = styled.section`
 		@media screen and (max-width: 800px) {
 			display: none;
 		}
+	}
+
+	@-webkit-keyframes wiggle {
+		0% {
+			-webkit-transform: skewX(9deg);
+		}
+		10% {
+			-webkit-transform: skewX(-8deg);
+		}
+		20% {
+			-webkit-transform: skewX(7deg);
+		}
+		30% {
+			-webkit-transform: skewX(-6deg);
+		}
+		40% {
+			-webkit-transform: skewX(5deg);
+		}
+		50% {
+			-webkit-transform: skewX(-4deg);
+		}
+		60% {
+			-webkit-transform: skewX(3deg);
+		}
+		70% {
+			-webkit-transform: skewX(-2deg);
+		}
+		80% {
+			-webkit-transform: skewX(1deg);
+		}
+		90% {
+			-webkit-transform: skewX(0deg);
+		}
+		100% {
+			-webkit-transform: skewX(0deg);
+		}
+	}
+
+	@keyframes wiggle {
+		0% {
+			transform: skewX(9deg);
+		}
+		10% {
+			transform: skewX(-8deg);
+		}
+		20% {
+			transform: skewX(7deg);
+		}
+		30% {
+			transform: skewX(-6deg);
+		}
+		40% {
+			transform: skewX(5deg);
+		}
+		50% {
+			transform: skewX(-4deg);
+		}
+		60% {
+			transform: skewX(3deg);
+		}
+		70% {
+			transform: skewX(-2deg);
+		}
+		80% {
+			transform: skewX(1deg);
+		}
+		90% {
+			transform: skewX(0deg);
+		}
+		100% {
+			transform: skewX(0deg);
+		}
+	}
+	.animated {
+		-webkit-animation-duration: 10s;
+		animation-duration: 10s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+
+	.wiggle {
+		-webkit-animation-name: wiggle;
+		animation-name: wiggle;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	.animated.wiggle {
+		-webkit-animation-duration: 0.75s;
+		animation-duration: 0.75s;
+	}
+`;
+
+
+export const NewsLetterFormStyled = styled.form`
+	width: max-content;
+	margin: 3rem auto;
+	position: relative;
+	height: max-content;
+	${makeRowFlexStart};
+
+	input {
+		all: unset;
+		height: 2rem;
+		padding-bottom: 1rem;
+		background-color: ${({ theme }) => theme.$brightColor};
+		caret-color: ${({ theme }) => theme.$homeGoldLikeColor};
+		padding-left: 0.5rem;
+		margin-left: 0.5rem;
+
+		&:last-of-type {
+			position: relative;
+		}
+
+		&::placeholder {
+			font-size: 0.8rem;
+			color: ${({ theme }) => theme.$homeOutlineColor};
+			padding-left: 0.5rem;
+		}
+
+		&:focus {
+			box-shadow: 0.1rem 0.2rem 1rem ${({ theme }) => theme.$lightestShadowColor};
+		}
+	}
+
+	.send-news-letter-cta {
+		width: 3.5rem;
+		${makeColFlexCenter};
+		display: inline-flex;
+		height: 3rem;
+		transform-origin: bottom;
+		background-color: ${({ theme }) => theme.$darkAccentColor};
+
+		svg {
+			${makeFullHeightBlock};
+
+			path {
+				fill: ${({ theme }) => theme.$brightColor};
+			}
+		}
+	}
+
+	@-webkit-keyframes wiggle {
+		0% {
+			-webkit-transform: skewX(9deg);
+		}
+		10% {
+			-webkit-transform: skewX(-8deg);
+		}
+		20% {
+			-webkit-transform: skewX(7deg);
+		}
+		30% {
+			-webkit-transform: skewX(-6deg);
+		}
+		40% {
+			-webkit-transform: skewX(5deg);
+		}
+		50% {
+			-webkit-transform: skewX(-4deg);
+		}
+		60% {
+			-webkit-transform: skewX(3deg);
+		}
+		70% {
+			-webkit-transform: skewX(-2deg);
+		}
+		80% {
+			-webkit-transform: skewX(1deg);
+		}
+		90% {
+			-webkit-transform: skewX(0deg);
+		}
+		100% {
+			-webkit-transform: skewX(0deg);
+		}
+	}
+
+	@keyframes wiggle {
+		0% {
+			transform: skewX(9deg);
+		}
+		10% {
+			transform: skewX(-8deg);
+		}
+		20% {
+			transform: skewX(7deg);
+		}
+		30% {
+			transform: skewX(-6deg);
+		}
+		40% {
+			transform: skewX(5deg);
+		}
+		50% {
+			transform: skewX(-4deg);
+		}
+		60% {
+			transform: skewX(3deg);
+		}
+		70% {
+			transform: skewX(-2deg);
+		}
+		80% {
+			transform: skewX(1deg);
+		}
+		90% {
+			transform: skewX(0deg);
+		}
+		100% {
+			transform: skewX(0deg);
+		}
+	}
+	&.animated {
+		background-repeat: no-repeat;
+		background-position: left top;
+		-webkit-animation-duration: 10s;
+		animation-duration: 10s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
+
+	&.wiggle {
+		-webkit-animation-name: wiggle;
+		animation-name: wiggle;
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	&.animated.wiggle {
+		-webkit-animation-duration: 0.75s;
+		animation-duration: 0.75s;
 	}
 `;
