@@ -22,3 +22,4 @@ export const Logo = ({$variant}) => {
 		</LogoStyled>
   );
 };
+export default Logo;
