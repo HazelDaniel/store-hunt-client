@@ -6,7 +6,7 @@ import { default as Countdown } from "react-countdown";
 import { useNavigate } from "react-router-dom";
 
 // Random component
-const CountdownCompletion = () => <span>You are good to go!</span>;
+const CountdownCompletion = () => <span>You are good to go! Merry christmas</span>;
 
 // Renderer callback with condition
 const renderer = ({days, hours, minutes, seconds, completed }) => {
@@ -64,7 +64,7 @@ export const DealOfTheWeek = () => {
 
 			<div className="DOW-time-div">
 				<div className="DOW-time-count-div">
-					<Countdown renderer={ renderer} date={new Date (`december 1, 2022`)} />
+					<Countdown renderer={ renderer} date={new Date (`december 25, 2022`)} />
 				</div>
 				<div className="DOW-time-count-label-div">
 					<span>Days</span>

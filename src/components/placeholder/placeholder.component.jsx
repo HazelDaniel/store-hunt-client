@@ -5,5 +5,6 @@ export const Placeholder = () => {
 		<PlaceholderSectionStyled />
 		<PlaceholderSectionStyled />
 		<PlaceholderSectionStyled />
+		<PlaceholderSectionStyled />
 	</PlaceholderStyled>;
 };

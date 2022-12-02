@@ -4,7 +4,7 @@ import { RatingDiv } from "../rating-div/rating-div.component";
 import { ProductColorsListStyled, ShopProductStyled } from "./shop-product.styles";
 
 export const ShopProduct = ({ product }) => {
-	product = null;
+	// product = null;
 	return product ? (
 		<ShopProductStyled className="shop-product-div">
 			<div className="SPD-top">
