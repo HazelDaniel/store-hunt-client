@@ -184,7 +184,7 @@ export const DirectoryStyled = styled.div`
 			@media screen and (min-width: 641px) {
 				position: relative;
 				height: 20rem;
-				background: url("../IMAGES/e-commerce-entry-bg-2.jpg") no-repeat;
+				background: url("../IMAGES/dark-floral-background.jpg") no-repeat;
 				background-attachment: fixed;
 				background-size: cover;
 				transition: all 0.2s ease-in-out;
@@ -194,7 +194,7 @@ export const DirectoryStyled = styled.div`
 				}
 
 				&:hover {
-					background: ${({ theme }) => theme.$darkAccentColor};
+					background: ${({ theme }) => theme.$DirectoryBlurColorDark};
 				}
 
 				&::before {
@@ -227,6 +227,7 @@ export const DirectoryStyled = styled.div`
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 			grid-auto-flow: row;
+			grid-auto-rows: max-content;
 			grid-gap: 0.1rem;
 			width: 95vw;
 			height: max-content;
@@ -278,7 +279,7 @@ export const DirectoryStyled = styled.div`
 					aspect-ratio: 1/1;
 					z-index: 0;
 					filter: grayscale(0.2);
-					background: url("../IMAGES/amsterdam-big.jpg") !important;
+					/* background: url("../IMAGES/amsterdam-big.jpg") !important; */
 				}
 			}
 		}

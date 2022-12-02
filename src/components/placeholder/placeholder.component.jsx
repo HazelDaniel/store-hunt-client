@@ -1,5 +1,10 @@
+import { PlaceholderSectionStyled, PlaceholderStyled } from "./placeholder.styles";
+
 export const Placeholder = () => {
-	return (
-		<div> no items yet .</div>
-	)
-}
+	return <PlaceholderStyled>
+		<PlaceholderSectionStyled />
+		<PlaceholderSectionStyled />
+		<PlaceholderSectionStyled />
+		<PlaceholderSectionStyled />
+	</PlaceholderStyled>;
+};

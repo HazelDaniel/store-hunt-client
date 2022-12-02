@@ -1,9 +1,11 @@
+import { Placeholder } from "../placeholder/placeholder.component";
 import { ProductStateTag } from "../product-state-tag/product-state-tag.component";
 import { RatingDiv } from "../rating-div/rating-div.component";
 import { ProductColorsListStyled, ShopProductStyled } from "./shop-product.styles";
 
 export const ShopProduct = ({ product }) => {
-	return (
+	// product = null;
+	return product ? (
 		<ShopProductStyled className="shop-product-div">
 			<div className="SPD-top">
 				{/* TODO: REMEMBER TO FIRST CHECK IF THE PRODUCT HAS IS-FEATURED IS-DISCOUNTED , ETC. PROPERTIES BEFORE RENDERING THE STATE TAG */}
@@ -24,7 +26,7 @@ export const ShopProduct = ({ product }) => {
 					+ Add to cart
 					<div className="SPD-content-colors-div">
 						{product.colors.list.map((color) => (
-							<ProductColorsListStyled id={`C-${color.id}`} $listId={`C-${color.id}`}/>
+							<ProductColorsListStyled id={`C-${color.id}`} $listId={`C-${color.id}`} />
 						))}
 					</div>
 				</div>
@@ -33,5 +35,5 @@ export const ShopProduct = ({ product }) => {
 				<p className="SPDC-price">${product.price.toFixed(2)}</p>
 			</div>
 		</ShopProductStyled>
-	);
+	) : <Placeholder />;
 };

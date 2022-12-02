@@ -32,6 +32,11 @@ export const DesktopSideTabStyled = styled.div`
 				height: 2rem;
 			}
 		}
+		&.UI-connected{
+			svg{
+				margin: 20% 0;
+			}
+		}
 
 		.user-connected-cart-icon {
 			${makeFullWidthBlock};
@@ -52,13 +57,21 @@ export const DesktopSideTabStyled = styled.div`
 				z-index: 3;
 			}
 		}
-
+		a {
+			${makeFullWidthBlock};
+			&.active {
+				svg {
+					path {
+						fill: ${({ theme }) => theme.$activeSideTabColor};
+					}
+				}
+			}
+		}
 		svg {
 			${makeFullWidthBlock};
 			fill: ${({ theme }) => theme.$desktopSideTabIconColor};
-			transform: scale(0.9);
+			transform: scale(0.85);
 			cursor: pointer;
-			width: 100% !;
 
 			path {
 				fill: ${({ theme }) => theme.$desktopSideTabIconColor};

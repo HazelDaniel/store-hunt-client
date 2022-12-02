@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import {
 	debug,
 	makeAbsoluteBottomLeftDiv,
@@ -36,6 +36,14 @@ export const SliderStyled = styled.div`
 			transition-delay: 1s * 0.65;
 			opacity: 1;
 			transform: translateY(0);
+		}
+	}
+	@keyframes slidePartIn {
+		from {
+			transform: translateX(100vw);
+		}
+		to {
+			transform: translateX(0);
 		}
 	}
 
@@ -91,6 +99,55 @@ export const SliderStyled = styled.div`
 		}
 	}
 
+	&.rolling {
+		.slider__slide-content {
+			animation-name: slideInFromLeft;
+			animation-duration: 2s;
+			animation-delay: 0.2s;
+			animation-timing-function: cubic-bezier(0.075, 0.165, 1);
+			animation-iteration-count: 1;
+			transform: translateX(0);
+			@keyframes slideInFromLeft {
+				from {
+					transform: translateX(-130%);
+				}
+				to {
+					transform: translateX(0);
+				}
+			}
+		}
+		.slider__slide-part-inner {
+			&::before {
+				animation-name: slidePartIn;
+				animation-timing-function: ease-in-out;
+				animation-duration: 1.618s;
+				animation-iteration-count: 1;
+				transform: translateX(0);
+			}
+		}
+		.slider-hero-image-div {
+			animation-name: slidePartIn;
+			animation-timing-function: ease-in-out;
+			animation-duration: 1.618s;
+			animation-iteration-count: 1;
+			animation-delay: 0.8s;
+			transform: translateX(0);
+		}
+	}
+	&.unrolling {
+		.slider__slide-content {
+			transform: translateX(-130%);
+		}
+		.slider__slide-part-inner {
+			&::before {
+				transform: translateX(100vw);
+			}
+		}
+		.slider-hero-image-div {
+			transform: translateX(100vw);
+		}
+	}
+
 	.slider__slides {
 		position: relative;
 		${makeFullSizeBlock};
@@ -128,6 +185,7 @@ export const SliderStyled = styled.div`
 			top: 10%;
 			height: max-content !important;
 			overflow: visible !important;
+			transform: translateX(-130%);
 		}
 
 		@mixin subTextsActiveSlide {
@@ -163,16 +221,17 @@ export const SliderStyled = styled.div`
 						background-repeat: no-repeat !important;
 						
 						&::before {
+							
+							animation-delay:  ${0.2 * i}s;
 							display: block;
 							position: absolute;
 							width: 100%;
 							height: 100%;
 							content: "";
 							background-image: inherit;
-							background-repeat: no-repeat !important;
 							background-size: cover !important;
-							background-position-x:  ${(i / 4) * 100}%;
-							background-position-x: ${i === 1 && `75%`};
+							background-position-x:  ${(i / 4) * 100}% !important;
+							background-repeat: no-repeat !important;
 							left: 0;
 							top: 0;
 							background-color: ${({ theme }) => theme.$lessBrightColor};
@@ -209,7 +268,6 @@ export const SliderStyled = styled.div`
 				background-size: 0 0;
 				background-repeat: no-repeat;
 				transition: transform 1s/2 ease-in-out;
-
 			}
 		}
 	}
@@ -327,6 +385,7 @@ export const SliderStyled = styled.div`
 		${makeAbsoluteBottomRightDiv};
 		right: 10%;
 		overflow: visible !important;
+		transform: translateX(100vw);
 
 		.slider-hero-image-circle {
 			${makeAbsoluteBottomLeftDiv};

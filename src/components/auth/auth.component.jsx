@@ -1,10 +1,20 @@
 import { Wrapper } from "../../layout-components/wrapper/wrapper.component";
 import { AuthStyled } from "./auth.styles";
 
+// ROUTING
+import { useNavigate } from "react-router-dom";
+
 export const Auth = () => {
+	const navigate = useNavigate();
 	return (
 		<>
-			<AuthStyled>
+			<AuthStyled
+				className="auth-overlay"
+				onClick={(event) => {
+					if (!event.target.classList.contains("auth-overlay")) return;
+					navigate(-1);
+				}}
+			>
 				<div className="auth-body">
 					<div className="auth-tab">
 						<p className="sign-up active">SIGN UP</p>
@@ -38,3 +48,4 @@ export const Auth = () => {
 		</>
 	);
 };
+export default Auth;

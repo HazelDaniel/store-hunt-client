@@ -7,6 +7,7 @@ import { PageLineBreak } from "../page-line-break/page-line-break.component";
 import { Slider } from "../slider/slider.component";
 
 export const Home = () => {
+  // throw new Error("this is a template error");
 	return (
 		<Wrapper>
 			<Slider />
@@ -18,3 +19,4 @@ export const Home = () => {
 		</Wrapper>
 	);
 };
+export default Home;

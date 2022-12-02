@@ -122,7 +122,7 @@ export const SideTabTitleLinkDivStyled = styled.div`
 		margin-left: 1rem;
 
 		&.disabled {
-			color: ${({ theme }) => theme.$homeOutlineColorTrans};
+			color: ${({ theme }) => theme.$mobileNavDisabledColor};
 		}
 	}
 

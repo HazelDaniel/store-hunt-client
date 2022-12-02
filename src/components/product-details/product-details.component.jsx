@@ -18,3 +18,4 @@ export const ProductDetails = () => {
 		</Wrapper>
 	);
 };
+export default ProductDetails;

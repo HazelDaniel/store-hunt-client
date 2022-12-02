@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { mobileNavContext } from "../../contexts/mobile-nav-context.js";
 import { __toggleMobileNav } from "../../reducers/mobile-nav-reducer.js";
 
-export const ModalOverlay = () => {
+export const ModalOverlay = ({themeDispatch}) => {
   const { mobileNavState, mobileNavDispatch } = useContext(mobileNavContext);
   return (
     <ModalOverlayStyled
@@ -14,7 +14,7 @@ export const ModalOverlay = () => {
           mobileNavDispatch(__toggleMobileNav());
       }}
     >
-      <MobileNavTab />
+      <MobileNavTab themeDispatch={themeDispatch} />
     </ModalOverlayStyled>
   );
 };
