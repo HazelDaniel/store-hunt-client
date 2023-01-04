@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
+
 import { Logo } from "../logo/logo.component";
 import { FooterStyled, FooterTopStyled, TopLeftStyled, TopMiddleStyled, TopRIghtStyled } from "./footer.styles";
 
 export const Footer = () => {
+	const navigate = useNavigate();
 	return (
 		<FooterStyled>
 			<FooterTopStyled>
@@ -16,11 +20,10 @@ export const Footer = () => {
 				<TopMiddleStyled>
 					<p className="footer-section-title">DIRECTIONS</p>
 					<ul className="footer-section-lists">
-						<li>SHOP</li>
-						<li>COLLECTIONS</li>
-						<li>SUBSCRIBE</li>
-						<li>BLOG</li>
-						<li>CONTACT US</li>
+						<li onClick={()=> navigate("/shop")} >SHOP</li>
+						<li onClick={()=> navigate("/#newsletter")} >SUBSCRIBE</li>
+						<li onClick={()=> navigate("/blog")}>BLOG</li>
+						<li onClick={()=> navigate("/contact")}>CONTACT US</li>
 					</ul>
 				</TopMiddleStyled>
 				<TopRIghtStyled>

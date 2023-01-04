@@ -5,7 +5,7 @@ import { useState } from "react";
 export const Newsletter = () => {
 	const [_, setInview] = useState(false);
 	return (
-		<NewsletterStyled>
+		<NewsletterStyled id="newsletter">
 			<div className="NLD-section-title">
 				<p>SUBSCRIBE TO OUR NEWSLETTER</p>
 			</div>

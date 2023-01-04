@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
+
 import { Wrapper } from "../../layout-components/wrapper/wrapper.component"
 import { CartItem } from "../cart-item/cart-item.component";
 import { ShopTopPane } from "../shop-top-pane/shop-top-pane.component"
 import { CartStyled } from "./cart.styles";
+
 
 const cartNavData = {
 	rootPageText: "shop",
@@ -34,13 +38,14 @@ const CART_DATA = {
 	],
 };
 export const Cart = () => {
+	const navigate = useNavigate();
 	return (
 		<Wrapper>
 			<ShopTopPane navText={cartNavData} />
 			<CartStyled>
 				<div className="cart-total-price-wrapper">
 					<p>cart total: <span>${CART_DATA.subTotal.toFixed(2)}</span></p>
-					<button>Proceed to checkout</button>
+					<button onClick={()=>navigate("/checkout")}>Proceed to checkout</button>
 				</div>
 				<div className="cart-body">
 					<div className="cart-heading-div">
