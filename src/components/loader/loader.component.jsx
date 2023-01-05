@@ -2,7 +2,6 @@ import { LoaderOverlayStyled, LoaderTextStyled, LoaderUnderlineStyled } from "./
 
 
 export const Loader = () => {
-	console.log("loader rendering");
 	return (
 		<LoaderOverlayStyled>
 			<LoaderTextStyled>

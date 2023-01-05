@@ -54,7 +54,7 @@ export const Cart = () => {
 						<p className="total-title">TOTAL</p>
 					</div>
 					<div className="cart-items-div">
-						{CART_DATA.carts.map(item=> <CartItem item={item}/>)}
+						{CART_DATA.carts.map((item,itemIndex)=> <CartItem item={item} key={itemIndex}/>)}
 					</div>
 					<div className="cart-cta-div">
 						<button className="cart-cta">CONTINUE SHOPPING</button>

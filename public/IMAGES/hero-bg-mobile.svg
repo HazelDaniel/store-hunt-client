@@ -1,6 +1,6 @@
 <svg width="1088" height="762" viewBox="0 0 1088 762" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1087 497H1" stroke="#D3D3D3" stroke-opacity="0.6" stroke-width="2" stroke-linecap="square"/>
-<path d="M252 1V761" stroke="#D3D3D3" stroke-opacity="0.6" stroke-width="2" stroke-linecap="square"/>
+<path d="M1087 497H1" stroke="#D3D3D3" stroke-opacity="0.6" stroke-width="2" strokeLinecap="square"/>
+<path d="M252 1V761" stroke="#D3D3D3" stroke-opacity="0.6" stroke-width="2" strokeLinecap="square"/>
 <circle cx="316.451" cy="6.51899" r="5.45051" fill="#D3D3D3"/>
 <ellipse cx="338.751" cy="6.51899" rx="5.45051" ry="5.45051" fill="#D3D3D3"/>
 <ellipse cx="361.05" cy="6.51899" rx="5.45051" ry="5.45051" fill="#D3D3D3"/>
