@@ -1,6 +1,11 @@
 import { ShopProduct } from "../shop-product/shop-product.component";
 import { RelatedProductsStyled } from "./related-products.styles";
 import { PRODUCT_DETAILS } from "../product-details/product-details.data";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Controller, Navigation, Pagination } from "swiper";
+import { useState } from "react";
 
 export const RelatedProducts = () => {
   return (
@@ -8,7 +13,7 @@ export const RelatedProducts = () => {
       <p className="related-products-title">
         Related <span>Products</span>
       </p>
-      <div className="RPW-carousel-control left">
+      {/* <div className="RPW-carousel-control left">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_97_216)">
             <path
@@ -27,14 +32,62 @@ export const RelatedProducts = () => {
             </clipPath>
           </defs>
         </svg>
-      </div>
-      <div className="related-products-wrapper">
-        <ShopProduct product={PRODUCT_DETAILS} />
-        <ShopProduct product={PRODUCT_DETAILS} />
-        <ShopProduct product={PRODUCT_DETAILS} />
-        <ShopProduct product={PRODUCT_DETAILS} />
-      </div>
-      <div className="RPW-carousel-control right">
+      </div> */}
+      <Swiper
+        slidesPerView={2}
+        spaceBetween={20}
+        dir={"rtl"}
+        pagination={{
+          clickable: true,
+          // type: "fraction",
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
+        modules={[Pagination, Navigation]}
+        className="mySwiper related-products-wrapper"
+      >
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+          start
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+        </SwiperSlide>
+        <SwiperSlide className={"shop-product-swiper-div"}>
+          <ShopProduct product={PRODUCT_DETAILS} />
+          end
+        </SwiperSlide>
+      </Swiper>
+
+      {/* <div className="RPW-carousel-control right">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_97_216)">
             <path
@@ -53,7 +106,7 @@ export const RelatedProducts = () => {
             </clipPath>
           </defs>
         </svg>
-      </div>
+      </div> */}
     </RelatedProductsStyled>
   );
 };

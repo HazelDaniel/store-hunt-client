@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { debug, makeAbsoluteBottomLeftDiv, makeAbsoluteTopLefDiv, makeAbsoluteTopRightDiv, makeColFlexCenter, makeColFlexStart, makeFullHeightBlock, makeFullSizeBlock, makeFullWidthBlock, makeRowFlexCenter, makeRowFlexEnd, makeUnSelectableTextDiv } from "../../styles/styles";
 import { _computeListColor } from "../shop-accordion/shop-accordion.styles";
+import { SwiperSlide } from "swiper/react";
 
 
 
@@ -12,7 +13,7 @@ const _TAlignText = css`
 `;
 
 
-export const ShopProductStyled = styled.div`
+export const ShopProductStyled = styled(SwiperSlide)`
 	${makeColFlexStart};
 	align-items: center;
 	overflow: hidden;
