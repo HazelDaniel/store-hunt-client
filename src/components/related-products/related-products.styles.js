@@ -37,6 +37,7 @@ export const RelatedProductsStyled = styled.section`
       padding: 0 1rem;
       transform: translateX(-0.5rem);
       cursor: pointer;
+      border-top-left-radius: 2rem;
     }
   }
 
@@ -57,10 +58,27 @@ export const RelatedProductsStyled = styled.section`
       z-index: 3 !important;
       opacity: 1;
       position: absolute !important;
-      width: 100vw;
-      bottom: 1rem;
+      /* width: 100vw; */
+      bottom: 10%;
+      @media screen and (min-width: 540px) and (max-width: 639px){
+        bottom: 20%;
+      }
+      ${makeRowFlexCenter};
+      
+
+      & > * {
+        background-color: red !important;
+
+      }
       .swiper-pagination-bullet {
-        background-color: ${({ theme }) => theme.$accentColor};
+        /* background-color: ${({ theme }) => theme.$accentColor}!important; */
+        background-color: #D1C3B9 !important;
+        border: 1pt solid ${({ theme }) => theme.$darkAccentColor};
+        &-active{
+          /* background-color: ${({ theme }) => theme.$lessBrightColor} !important;  */
+          background-color: #08090A;
+          /* display: none; */
+        }
       }
     }
     .shop-product-swiper-div {
@@ -79,6 +97,7 @@ export const RelatedProductsStyled = styled.section`
           width: 100% !important;
         }
         overflow: hidden;
+
         /* margin: 2.5rem 2vw; */
         /* &:first-of-type {
 					margin-left: 0;

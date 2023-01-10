@@ -1,16 +1,22 @@
 import { Placeholder } from "../placeholder/placeholder.component";
 import { ProductStateTag } from "../product-state-tag/product-state-tag.component";
 import { RatingDiv } from "../rating-div/rating-div.component";
+import { useNavigate } from "react-router-dom";
 import {
   ProductColorsListStyled,
   ShopProductStyled,
 } from "./shop-product.styles";
 
-export const ShopProduct = ({ product }) => {
+export const ShopProduct = ({ product, $isVariant }) => {
+  const navigate = useNavigate();
   // product = null;
   return product ? (
-    <ShopProductStyled className="shop-product-div">
-      <div className="SPD-top">
+    <ShopProductStyled $isVariant={$isVariant} className="shop-product-div">
+      <div className="SPD-top" onClick={(e)=> {
+        if(e.target.tagName !== 'IMG')return;
+        navigate("/product-details");
+
+      }}>
         {/* TODO: REMEMBER TO FIRST CHECK IF THE PRODUCT HAS IS-FEATURED IS-DISCOUNTED , ETC. PROPERTIES BEFORE RENDERING THE STATE TAG */}
         <ProductStateTag
           message={product.quantity > 0 ? "out of stock" : "featured"}

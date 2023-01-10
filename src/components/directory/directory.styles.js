@@ -29,6 +29,7 @@ export const _sectionTitle = css`
 		padding: 0.2rem;
 		margin-left: 0.2rem;
 		display: inline-flex !important;
+		border-top-left-radius: 1.3rem;
 	}
 `;
 export const DirectoryStyled = styled.div`

@@ -42,6 +42,14 @@ export const RelatedProducts = () => {
           // type: "fraction",
         }}
         breakpoints={{
+          200: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          390: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
           640: {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -56,34 +64,33 @@ export const RelatedProducts = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper related-products-wrapper"
       >
+        {/* TODO: this list is reversed . fix it in the swiper  */}
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
-          start
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
         <SwiperSlide className={"shop-product-swiper-div"}>
-          <ShopProduct product={PRODUCT_DETAILS} />
-          end
+          <ShopProduct product={PRODUCT_DETAILS} $isVariant={true}/>
         </SwiperSlide>
       </Swiper>
 

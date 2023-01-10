@@ -35,6 +35,8 @@ export const ShopProductStyled = styled(SwiperSlide)`
 		position: relative;
 		height: 65%;
 		background-color: ${({ theme }) => theme.$lessBrightColor};
+      background-color: ${({ theme }) => theme.$singleProductMainTextColor};
+ 
 
 		.SPD-image-div {
 			${makeFullSizeBlock};
@@ -86,6 +88,7 @@ export const ShopProductStyled = styled(SwiperSlide)`
 		position: relative;
 		height: 35%;
 		text-transform: capitalize;
+		border-bottom: .1rem solid ${({ theme,$isVariant }) => $isVariant?theme.$darkAccentColor: "unset"};
 		&:hover {
 			.SPD-top-cta-div {
 				opacity: 1;
