@@ -1,4 +1,4 @@
-import { mobileNavContext } from "../../contexts/mobile-nav-context.js";
+import { mobileNavContext } from "../../contexts/mobile-nav.context.js";
 import { useContext } from "react";
 import {
   NavThemeIconDivStyled,

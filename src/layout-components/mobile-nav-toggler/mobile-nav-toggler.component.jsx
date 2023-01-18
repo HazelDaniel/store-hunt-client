@@ -1,7 +1,7 @@
 import { MobileNavTogglerStyled } from "./mobile-nav-toggler.styles.js";
-import { mobileNavContext } from "../../contexts/mobile-nav-context.js";
+import { mobileNavContext } from "../../contexts/mobile-nav.context.js";
 import { useContext } from "react";
-import { __toggleMobileNav } from "../../reducers/mobile-nav-reducer.js";
+import { __toggleMobileNav } from "../../reducers/mobile-nav.reducer.js";
 
 export const MobileNavToggler = () => {
   const { mobileNavState, mobileNavDispatch } = useContext(mobileNavContext);

@@ -18,7 +18,7 @@ export const Checkout = () => {
             <p>discount code</p>
             <div className="discount-code-box">
               <form action="">
-                <input type="text" name="" id="" placeholder="Coupon Code" />
+                <input type="text" name="" id="" maxLength="7" placeholder="Coupon Code" />
                 <button type="submit">APPLY</button>
               </form>
             </div>
@@ -196,9 +196,9 @@ export const Checkout = () => {
                 type="text"
                 name=""
                 id="additional-notes"
+                maxLength="200"
                 style={{
                   resize: "none",
-                  maxLength: 250,
                 }}
                 placeholder="type your notes here"
               ></textarea>

@@ -4,8 +4,8 @@ import { initialThemeState, themeReducer } from "./reducers/theme.reducer.js";
 import { useMemo, useReducer } from "react";
 import { UpperPane } from "./layout-components/upper-pane/upper-pane.component";
 import { ModalOverlay } from "./layout-components/modal-overlay/modal-overlay.component.jsx";
-import { MobileNavProvider } from "./contexts/mobile-nav-context.js";
-import { initialMobileNavState, mobileNavReducer } from "./reducers/mobile-nav-reducer.js";
+import { MobileNavProvider } from "./contexts/mobile-nav.context.js";
+import { initialMobileNavState, mobileNavReducer } from "./reducers/mobile-nav.reducer.js";
 import { DesktopSideTab } from "./layout-components/desktop-side-tab/desktop-side-tab.component.jsx";
 import { Footer } from "./layout-components/footer/footer.component.jsx";
 
