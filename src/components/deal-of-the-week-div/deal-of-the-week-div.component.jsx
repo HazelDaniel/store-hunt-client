@@ -77,7 +77,10 @@ export const DealOfTheWeek = () => {
 
       <div className="DOW-time-div">
         <div className="DOW-time-count-div">
-          <Countdown renderer={renderer} date={new Date(`may 25, 2023`)} />
+          <Countdown
+            renderer={renderer}
+            date={new Date(`may 25, ${new Date().getFullYear() + 1}`)}
+          />
         </div>
         <div className="DOW-time-count-label-div">
           <span>Days</span>
